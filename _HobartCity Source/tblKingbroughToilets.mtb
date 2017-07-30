@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="SQL Port And Field Names"
+            Count="15"
+            Line0="MFK$GUID=MFK$GUID"
+            Line1="_MorfikType_MFK$GUID=String"
+            Line2="_UIDFieldName_=MFK$GUID"
+            Line3="MFK$CTS=MFK$CTS"
+            Line4="_MorfikType_MFK$CTS=TDateTime"
+            Line5="MFK$LMTS=MFK$LMTS"
+            Line6="_MorfikType_MFK$LMTS=TDateTime"
+            Line7="Lat=Lat"
+            Line8="_MorfikType_Lat=String"
+            Line9="Long=Long"
+            Line10="_MorfikType_Long=String"
+            Line11="TYPEOF=TYPEOF"
+            Line12="_MorfikType_TYPEOF=String"
+            Line13="AddressLoc=AddressLoc"
+            Line14="_MorfikType_AddressLoc=String" />
+        <mfk:section mfk:name="WebParameters" ParameterCount="0" />
+        <mfk:section mfk:name="General Fields" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="Metadata" Count="31">
+            <mfk:section mfk:name="_0">//create table "&lt;TABLENAME&gt;"</mfk:section>
+            <mfk:section mfk:name="_1">CREATE TABLE "&lt;TABLENAME&gt;"(</mfk:section>
+            <mfk:section mfk:name="_2">&nbsp;&nbsp;&nbsp;MFK$GUID      CHAR(16) CHARACTER SET OCTETS NOT NULL COLLATE OCTETS, </mfk:section>
+            <mfk:section mfk:name="_3">&nbsp;&nbsp;&nbsp;MFK$CTS       TIMESTAMP, </mfk:section>
+            <mfk:section mfk:name="_4">&nbsp;&nbsp;&nbsp;MFK$LMTS      TIMESTAMP, </mfk:section>
+            <mfk:section mfk:name="_5">&nbsp;&nbsp;&nbsp;"Lat"         VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_6">&nbsp;&nbsp;&nbsp;"Long"        VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_7">&nbsp;&nbsp;&nbsp;TYPEOF        VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_8">&nbsp;&nbsp;&nbsp;"AddressLoc"  VARCHAR(200) COLLATE UNICODE</mfk:section>
+            <mfk:section mfk:name="_9">);</mfk:section>
+            <mfk:section mfk:name="_10" />
+            <mfk:section mfk:name="_11">//create index "&lt;TABLENAME&gt;_X1"</mfk:section>
+            <mfk:section mfk:name="_12">CREATE UNIQUE  ASC INDEX "&lt;TABLENAME&gt;_X1" ON "&lt;TABLENAME&gt;"(MFK$GUID);</mfk:section>
+            <mfk:section mfk:name="_13" />
+            <mfk:section mfk:name="_14">//create index "&lt;TABLENAME&gt;_X2"</mfk:section>
+            <mfk:section mfk:name="_15">CREATE ASC INDEX "&lt;TABLENAME&gt;_X2" ON "&lt;TABLENAME&gt;"(MFK$CTS);</mfk:section>
+            <mfk:section mfk:name="_16" />
+            <mfk:section mfk:name="_17">SET TERM ## ;</mfk:section>
+            <mfk:section mfk:name="_18">CREATE TRIGGER "&lt;TABLENAME&gt;_TBI" FOR "&lt;TABLENAME&gt;" ACTIVE BEFORE INSERT POSITION 0 AS </mfk:section>
+            <mfk:section mfk:name="_19">BEGIN</mfk:section>
+            <mfk:section mfk:name="_20">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$CTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_21">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$LMTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_22">&nbsp;&nbsp;&nbsp;&nbsp;IF ((NEW.MFK$GUID IS NULL) OR (NEW.MFK$GUID='GenerateGUIDEx()')) THEN</mfk:section>
+            <mfk:section mfk:name="_23">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$GUID = GenerateGUIDEx();</mfk:section>
+            <mfk:section mfk:name="_24">END ## SET TERM ; ##</mfk:section>
+            <mfk:section mfk:name="_25" />
+            <mfk:section mfk:name="_26">SET TERM ## ;</mfk:section>
+            <mfk:section mfk:name="_27">CREATE TRIGGER "&lt;TABLENAME&gt;_TBU" FOR "&lt;TABLENAME&gt;" ACTIVE BEFORE UPDATE POSITION 0 AS </mfk:section>
+            <mfk:section mfk:name="_28">BEGIN</mfk:section>
+            <mfk:section mfk:name="_29">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$LMTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_30">END ## SET TERM ; ##</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridOptions"
+            GridCol0="18"
+            GridCol1="180"
+            GridCol2="100"
+            GridCol3="1000" />
+        <mfk:section mfk:name="WebParameters" ParameterCount="0" />
+    </mfk:config>
+    <mfk:properties>
+        <mfk:object mfk:name="tblKingbroughToiletsProvider"
+            mfk:class="TtblKingbroughToiletsProvider" />
+    </mfk:properties>
+    <mfk:server>
+        <![CDATA[
+        Unit tblKingbroughToilets;
+
+        Interface
+
+        Type
+        tblKingbroughToiletsProvider = Class(TableProvider)
+          private
+            { Private declarations }
+          public
+            { Public declarations }
+        End; ['WSRead=true','WSWrite=true'];
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:server>
+    <mfk:browser>
+        <![CDATA[
+        Unit tblKingbroughToilets;
+
+        Interface
+
+        Type
+        tblKingbroughToiletsProvider = Class(TableProvider)
+          private
+            { Private declarations }
+          public
+            { Public declarations }
+        End; ['WSRead=true','WSWrite=true'];
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:browser>
+</mfk:MorfikFile>

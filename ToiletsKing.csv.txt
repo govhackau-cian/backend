@@ -1,0 +1,49 @@
+Latitude,Longitutde,Name,Type,Address,Phone,Email
+"-43.3148344,147.2430837",,Alonnah Foreshore Park,BBQ,"3889 Bruny Island Main Rd, Alonnah TAS 7150, Australia",,
+"-43.3657212,147.3345548",,Adventure Bay Playground,BBQ,"5 Kellaway Road, Adventure Bay, Tasmania",,
+-43.132078,147.252894,Trial Bay Foreshore,BBQ,Channel Highwal TRIAL BAY,,
+,,Tinderbox Foreshore Reserve,BBQ,"24 Fergusson Avenue, TINDERBOX",,
+,,Taroona Beach,BBQ,Taroona Beach,,
+,,Snug Beach,BBQ,"Foreshore Are, SNUG BEACH",,
+,,Silverwater Park,BBQ,"3473 Channel Highway, WOODBRIDGE",,
+"-43.026511,147.277129",,Dru Point Reserve,BBQ,"Dru Point Reserve, MARGATE",,
+,,Dennes Point Foreshore,BBQ,"Nebraska Road, DENNES POINT",,
+,,Christopher Johnson Memorial Park,BBQ,"Tyndall Road, KINGSTON BEACH",,
+,,Blackmans Bay Foreshore,BBQ,Blackmans Bay Beach,,
+,,South Channel Community Centre,BBQ,"25 McDowell Street, MIDDLETON 7163",(03) 6266 1622,
+,,Kettering Hall,BBQ,2963 CHannel Highway KETTERING 7155,(03) 6267 4642,
+,,Woodbridge Hall,Halls/Venues,"3405 Channel Highway, WOODBRIDGE 7162",(03) 0432 202 790,
+,,West Winds Community Centre,Halls/Venues,"3528 Channel Highway, WOODBRIDGE 7162",(03) 6267 4713,
+,,Twin Ovals Function Centre,Halls/Venues,"35 Lightwood Drive, KINGSTON 7050",,
+,,Taroona Community Hall,Halls/Venues,"Batchelor Way, TAROONA 7053",(03) 6227 8243,
+,,Taroona Community Cottage,Halls/Venues,"Batchelor Way, TAROONA 7053",0419 394 757,communitycottage@taroona.com.au
+,,North Bruny Community Centre,Halls/Venues,"18 Bruny Island Main Rd, Dennes POINT 7150",(03) 6260 6245 0425 855 770,
+,,Lunawanna Hall,Halls/Venues,"4586 Bruny Island Main Rd, LUNAWANNA 7150",(03) 6293 1550,
+,,Lower Longley Hall,Halls/Venues,"9 Hovingstons Rd, LOWER LONGLEY",(03) 6264 1482,
+,,Kingborough Senior Citizens Centre,Halls/Venues,"35 Redwood Rd, KINGSTON 7050",(03) 6229 4487,
+,,Bruny Island Community Centre,Halls/Venues,"14 School Rd, ALONNAH 7150",(03) 6293 1139,
+,,Barnes Bay CWA,Halls/Venues,"680 Bruny Island Main Rd, BARNES BAY 7150",(03) 6260 6232 or (03) 6260 6277,
+,,Adventure Bay Hall,Halls/Venues,"5 Kellaway Rd, ADVENTURE BAY 7150",(03) 6293 1369,
+,,Sandfly Hall,Halls/Venues,"811 Sandfly Road, SANDFLY 7150",(03) 6211 8200,kc@kingborough.tas.gov.au
+,,Margate Hall,Halls/Venues,1744 Channel Highway MARGATE 7054,(03) 6211 8200,kc@kingborough.tas.gov.au
+,,Blackmans Bay Hall,Halls/Venues,24 Ocean Esplanade BLACKMANS BAY 7052,(03) 6211 8200,kc@kingborough.tas.gov.au
+,,Kingston Beach Hall,Halls/Venues,"20 Beach Rd, KINGSTON BEACH 7050",(03) 6211 8200,kc@kingborough.tas.gov.au
+,,Snug Hall,Halls/Venues,"62 Beach Road Snug, Tasmania",(03) 6267 9889,kc@kingborough.tas.gov.au
+-42.9673869,147.301416,Willowbend Playground,Play/Fitness Equipment,84 Willowbend Rd Kingston TAS 7050,,
+-42.977929,147.3229007,Rotary Centennial Park,Play/Fitness Equipment,40 Balmoral Rd Kingston Beach TAS 7050,,
+-43.234066,147.256417,Middleton Foreshore Reserve,Play/Fitness Equipment,"Esplanade Road, MIDDLETON",,
+-42.9641192,147.2351015,Leslie Vale Oval,Play/Fitness Equipment,"550 Leslie Road, LESLIE VALE",,
+-43.159997,147.240259,Woodbridge Hall Toilets,Public Toilets,"3405 Channel HIghway, WOODBRIDGE",,
+-42.9850165,147.1953555,Sandfly Hall Toilets,Public Toilets,"811 Sandly Road, SANDFLY",,
+-42.9880525,147.1983303,Sandfly Oval,Public Toilets,"770 Sandfly Rd, SANDFLY",,
+-43.028975,147.262709,Margate Hall Toilets,Public Toilets,"1744 Channel Highway, MARGATE",,
+-43.364459,147.227991,Lunawanna Hall Toilets,Public Toilets,"4586 Bruny Island Main Rd, BRUNY ISLAND",,
+-43.1251408,147.2457205,Kettering Oval Toilets,Public Toilets,"2693 Channel Highway, KETTERING",,
+-43.26149944,147.2424053,Gordon Oval Reserve,Public Toilets,"Channel Highway, GORDON",,
+-43.316609,147.243387,Alonnah Service Centre,Public Toilets,"3893 Main Road, ALONNAH",,
+-43.36687182,147.3347753,Adventure Bay Toilets,Public Toilets,"5 Kellaway Road, ADVENTURE BAY",,
+-43.07898815,147.3347753,Coningham Beach Toilets,Public Toilets,Coningham Beach Foreshore,,
+-42.9802331,147.3251507,Kingston Beach Toilets,Public Toilets,"25a Osborne Esplanade, KINGSTON BEACH",,
+-43.1515111,147.3730779,Bruny Waste Transfer Station,Waste,"Bruny Island Main Rd, North Bruny TAS 7150",(03) 6267 2337,kc@kingborough.tas.gov.au
+-43.0431197,147.263387,Barretta Waste Management Facility,Waste,"1922 Channel Hwy, Barretta TAS 7054",(03) 6267 2337,kc@kingborough.tas.gov.au
+,,Tinderbox Hills,,"Estuary Drive, Blackmans Bay",,

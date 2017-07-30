@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="FastLookup"
+            StylesUsed="Band.Default,Button.Default,ListBox.Default,ListBoxItem-ListItem.Default"
+            WidgetsUsed=""
+            CustomControlsUsed=""
+            LanguageData="Form1.Button1.Caption=ConvertCSV"
+            ContentWidth="211667"
+            ContentHeight="211667"
+            DataSource=""
+            ChildForms=""
+            SubForms=""
+            HTMLHeaders=""
+            HyperLinks=""
+            LookupDataSources=""
+            ViewMode="0"
+            ColumnCount="1"
+            ContentLayout="0" />
+        <mfk:section mfk:name="FastLookup - Query Ports" Count="0" />
+        <mfk:section mfk:name="WebParameters" ParameterCount="1" />
+        <mfk:section mfk:name="DocumentGroup0Header" Name="GHeader0" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup0Footer" Name="GFooter0" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup0"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup1Header" Name="GHeader1" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup1Footer" Name="GFooter1" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup1"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup2Header" Name="GHeader2" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup2Footer" Name="GFooter2" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup2"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup3Header" Name="GHeader3" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup3Footer" Name="GFooter3" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup3"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup4Header" Name="GHeader4" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup4Footer" Name="GFooter4" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup4"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup5Header" Name="GHeader5" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup5Footer" Name="GFooter5" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup5"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup6Header" Name="GHeader6" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup6Footer" Name="GFooter6" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup6"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup7Header" Name="GHeader7" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup7Footer" Name="GFooter7" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup7"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup8Header" Name="GHeader8" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup8Footer" Name="GFooter8" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup8"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup9Header" Name="GHeader9" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup9Footer" Name="GFooter9" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup9"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="WebParameter0"
+            Name="ViewMode"
+            DataType="String"
+            DefaultValue="vmSingle"
+            InOut="In"
+            Description="Form data display mode"
+            DisplayValue=""
+            DefaultValueSet="1"
+            ParamKind="0" />
+        <mfk:section mfk:name="General Fields" Language="0" Attributes="[Hidden]" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="DetailsBand" Name="Detail" DisplayText="Details" />
+        <mfk:section mfk:name="WebParameters" ParameterCount="1" />
+        <mfk:section mfk:name="DocumentHeaderFooter" ShowDocumentHeader="1" ShowDocumentFooter="1" />
+        <mfk:section mfk:name="PageHeaderFooter" ShowPageHeader="0" ShowPageFooter="0" />
+        <mfk:section mfk:name="DocumentEditBand" ShowEditBand="0" />
+        <mfk:section mfk:name="Editor Options">
+            <mfk:section mfk:name="Collapsed Lines" />
+        </mfk:section>
+        <mfk:section mfk:name="DocumentGroup0Header" Name="GHeader0" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup0Footer" Name="GFooter0" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup0"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup1Header" Name="GHeader1" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup1Footer" Name="GFooter1" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup1"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup2Header" Name="GHeader2" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup2Footer" Name="GFooter2" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup2"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup3Header" Name="GHeader3" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup3Footer" Name="GFooter3" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup3"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup4Header" Name="GHeader4" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup4Footer" Name="GFooter4" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup4"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup5Header" Name="GHeader5" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup5Footer" Name="GFooter5" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup5"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup6Header" Name="GHeader6" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup6Footer" Name="GFooter6" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup6"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup7Header" Name="GHeader7" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup7Footer" Name="GFooter7" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup7"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup8Header" Name="GHeader8" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup8Footer" Name="GFooter8" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup8"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup9Header" Name="GHeader9" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup9Footer" Name="GFooter9" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup9"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="WebParameter0"
+            Name="ViewMode"
+            DataType="String"
+            DefaultValue="vmSingle"
+            InOut="In"
+            Description="Form data display mode"
+            DisplayValue=""
+            DefaultValueSet="1"
+            ParamKind="0" />
+    </mfk:config>
+    <mfk:properties>
+        <mfk:object mfk:name="Form1"
+            mfk:class="TForm1"
+            Left="0"
+            Top="0"
+            Width="211667"
+            Height="215635"
+            HorzScrollBar.Visible="False"
+            VertScrollBar.Visible="False"
+            Caption="'Form1'"
+            ClientHeight="815"
+            ClientWidth="800"
+            Color="clWhite"
+            Font.Charset="DEFAULT_CHARSET"
+            Font.Color="clWindowText"
+            Font.Height="-11"
+            Font.Name="'Tahoma'"
+            OldCreateOrder="False"
+            Position="poDesigned"
+            Visible="True"
+            ZoomFactor="1"
+            UID="'{40B5EC08-C2AF-4098-BE77-F4512EADE1A3}'"
+            ContentWidth="211667"
+            ContentHeight="215636"
+            ColumnCount="1"
+            RowSpacing="0"
+            ColumnSpacing="10000"
+            ColumnWidth="211667"
+            ColumnHeight="211667"
+            ColumnLayout="clDownThenAcross"
+            ColumnSameAsDetail="True"
+            GroupKeepTogether="rktPerPage"
+            PageSize="10"
+            PageNavigator="False"
+            RecordNavigator="False"
+            MaxRecordsPerGroup="5"
+            MaxRecordsPerPage="-1"
+            ViewMode="vmSingle"
+            ContentLayout="clHorizontal"
+            BrowserHistory="True"
+            PixelsPerInch="96"
+            TextHeight="13">
+            <Font.Style mfk:type="set" />
+            <mfk:object mfk:name="Detail"
+                mfk:class="Band"
+                Left="0"
+                Top="1323"
+                Width="211667"
+                Height="211667"
+                Cursor="crDefault"
+                Margins.Left="0"
+                Margins.Top="0"
+                Margins.Right="0"
+                Margins.Bottom="0"
+                ShowRuntimeStates="False"
+                OriginalOwnerID="'{40B5EC08-C2AF-4098-BE77-F4512EADE1A3}'"
+                CanBeSelectedAtDesignTime="True"
+                IsDesignVisible="True"
+                NeedsMovingHandle="True"
+                ShadowCopyRequired="False"
+                Locked="False"
+                Layout="lAbsolute"
+                BorderStyle="bsNone"
+                BorderWidth="0"
+                BorderColor="15987957"
+                Color="clNone"
+                CanGrow="Yes"
+                CanShrink="True"
+                NavigationBar="'Buttons:Space,FirstRecord,PreviousRecord,CurrentRecord,NextRecord,LastRecord,RecordCount,Separator,Refresh,Submit,Space,NewRecord,DeleteRecord,EditRecord,Space;'"
+                BandTypeValue="btDetail">
+                <BorderSides mfk:type="set">
+                    <bsLeft />
+                    <bsTop />
+                    <bsRight />
+                    <bsBottom />
+                </BorderSides>
+                <ControlStyles mfk:type="collection">
+                    <item SProps="'Band.Default|Color,BorderColor,Effect,BorderWidth,BorderStyle,Cursor'"
+                        Font.SProps="'Size,Color,Name'" />
+                </ControlStyles>
+                <mfk:object mfk:name="Button1"
+                    mfk:class="Button"
+                    Left="166688"
+                    Top="10583"
+                    Width="32808"
+                    Height="8467"
+                    Cursor="crDefault"
+                    Margins.Left="0"
+                    Margins.Top="0"
+                    Margins.Right="0"
+                    Margins.Bottom="0"
+                    Opacity="100"
+                    ShowRuntimeStates="False"
+                    AssignedEvents="'OnClick'"
+                    OriginalOwnerID="'{40B5EC08-C2AF-4098-BE77-F4512EADE1A3}'"
+                    CanBeSelectedAtDesignTime="True"
+                    IsDesignVisible="True"
+                    NeedsMovingHandle="False"
+                    TabOrder="0"
+                    BorderWidth="265"
+                    BorderStyle="bsSingle"
+                    BorderColor="11974326"
+                    Color="15987699"
+                    Transparent="False"
+                    Caption="'ConvertCSV'"
+                    GroupIndex="0"
+                    Icon.VertAlign="taVerticalCenter"
+                    Icon.HorzMargin="5"
+                    Alignment="taCenter"
+                    Padding.Left="0"
+                    Padding.Top="0"
+                    Padding.Right="0"
+                    Padding.Bottom="0"
+                    Font.Charset="DEFAULT_CHARSET"
+                    Font.Color="1579032"
+                    Font.Height="-13"
+                    Font.Name="'Arial'"
+                    OnClick="Button1Click">
+                    <BorderSides mfk:type="set">
+                        <bsLeft />
+                        <bsTop />
+                        <bsRight />
+                        <bsBottom />
+                    </BorderSides>
+                    <Font.Style mfk:type="set" />
+                    <ControlStyles mfk:type="collection">
+                        <item SProps="'Button.Default|Effect,Color,BorderColor,BorderStyle,BorderWidth,Alignment,Width,Height,PaddingBottom,Cursor'"
+                            Font.SProps="'Color,Name,Style,Size'"
+                            Icon.SProps="'Picture,VertAlign,HorzAlign,VertMargin,HorzMargin'" />
+                    </ControlStyles>
+                    <mfk:object mfk:class="TWebButtonImageEffect"
+                        Stretch="True"
+                        BackgroundImage="'Button1.png'"
+                        Client_Left="1"
+                        Client_Top="1"
+                        Client_Right="123"
+                        Client_Bottom="31"
+                        TextEffect.Font.Charset="DEFAULT_CHARSET"
+                        TextEffect.Font.Color="1579032"
+                        TextEffect.Font.Height="-13"
+                        TextEffect.Font.Name="'Arial'"
+                        TextEffect.TextAlignment="taCenter"
+                        TextEffect.VerticalAlign="taVerticalCenter"
+                        TextEffect.Text="'ConvertCSV'"
+                        TextEffect.WordWrap="False"
+                        TextEffect.Multiline="False">
+                        <TextEffect.Font.Style mfk:type="set" />
+                    </mfk:object>
+                </mfk:object>
+                <mfk:object mfk:name="Listbox_SearchResults"
+                    mfk:class="ListBox"
+                    Left="19579"
+                    Top="86254"
+                    Width="164306"
+                    Height="29633"
+                    Cursor="crDefault"
+                    Margins.Left="0"
+                    Margins.Top="0"
+                    Margins.Right="0"
+                    Margins.Bottom="0"
+                    Opacity="100"
+                    ShowRuntimeStates="False"
+                    OriginalOwnerID="'{40B5EC08-C2AF-4098-BE77-F4512EADE1A3}'"
+                    CanBeSelectedAtDesignTime="True"
+                    IsDesignVisible="True"
+                    NeedsMovingHandle="True"
+                    Locked="False"
+                    Layout="lAbsolute"
+                    BorderStyle="bsSingle"
+                    BorderWidth="265"
+                    BorderColor="11974326"
+                    Color="15987699"
+                    Font.Charset="DEFAULT_CHARSET"
+                    Font.Color="1579032"
+                    Font.Height="-13"
+                    Font.Name="'Arial'"
+                    MultiSelect="False"
+                    Visible="False"
+                    TabOrder="0"
+                    Padding.Left="5"
+                    Padding.Top="2"
+                    Padding.Right="0"
+                    Padding.Bottom="0">
+                    <BorderSides mfk:type="set">
+                        <bsLeft />
+                        <bsTop />
+                        <bsRight />
+                        <bsBottom />
+                    </BorderSides>
+                    <Font.Style mfk:type="set" />
+                    <ControlStyles mfk:type="collection">
+                        <item SProps="'ListBox.Default|Cursor,Effect,Color,BorderColor,BorderWidth,BorderStyle,Height,PaddingLeft,PaddingTop'"
+                            Font.SProps="'Color,Name,Style,Size'" />
+                    </ControlStyles>
+                    <mfk:object mfk:class="TWebListBoxImageEffect"
+                        BackgroundImage="'Listbox_SearchResults.png'"
+                        Client_Left="1"
+                        Client_Top="1"
+                        Client_Right="620"
+                        Client_Bottom="111" />
+                    <mfk:object mfk:name="ListBoxItem1"
+                        mfk:class="ListBoxItem"
+                        Left="1588"
+                        Top="794"
+                        Width="157956"
+                        Height="4762"
+                        Cursor="crDefault"
+                        Margins.Left="0"
+                        Margins.Top="0"
+                        Margins.Right="0"
+                        Margins.Bottom="0"
+                        Opacity="100"
+                        ShowRuntimeStates="False"
+                        ControlID="'ListItem'"
+                        OriginalOwnerID="'{40B5EC08-C2AF-4098-BE77-F4512EADE1A3}'"
+                        CanBeSelectedAtDesignTime="True"
+                        IsDesignVisible="True"
+                        NeedsMovingHandle="False"
+                        TabOrder="0"
+                        BorderWidth="0"
+                        BorderStyle="bsNone"
+                        BorderColor="8688022"
+                        Color="clNone"
+                        Transparent="True"
+                        GroupIndex="0"
+                        Alignment="taLeftJustify"
+                        Padding.Left="0"
+                        Padding.Top="0"
+                        Padding.Right="0"
+                        Padding.Bottom="0"
+                        Font.Charset="DEFAULT_CHARSET"
+                        Font.Color="1579032"
+                        Font.Height="-13"
+                        Font.Name="'Arial'">
+                        <BorderSides mfk:type="set">
+                            <bsLeft />
+                            <bsTop />
+                            <bsRight />
+                            <bsBottom />
+                        </BorderSides>
+                        <Font.Style mfk:type="set" />
+                        <ControlStyles mfk:type="collection">
+                            <item SProps="'ListBoxItem-ListItem.Default|Color,Alignment,Effect,BorderColor,BorderStyle,BorderWidth,Width,Height,Cursor'"
+                                Icon.SProps="'Picture,VertAlign,HorzAlign,VertMargin,HorzMargin'">
+                                <Font.NSProps mfk:type="list">
+                                    <item>'Color'</item>
+                                    <item>'#Theme#Styles.ListBox.Default.Font.Color'</item>
+                                    <item>'Name'</item>
+                                    <item>'#Theme#Styles.ListBox.Default.Font.Name'</item>
+                                    <item>'Style'</item>
+                                    <item>'#Theme#Styles.ListBox.Default.Font.Style'</item>
+                                    <item>'Size'</item>
+                                    <item>'#Theme#Styles.ListBox.Default.Font.Size'</item>
+                                </Font.NSProps>
+                            </item>
+                        </ControlStyles>
+                    </mfk:object>
+                </mfk:object>
+                <mfk:object mfk:name="Button2"
+                    mfk:class="Button"
+                    Left="19579"
+                    Top="73819"
+                    Width="40746"
+                    Height="10848"
+                    Cursor="crDefault"
+                    Margins.Left="0"
+                    Margins.Top="0"
+                    Margins.Right="0"
+                    Margins.Bottom="0"
+                    Opacity="100"
+                    ShowRuntimeStates="False"
+                    AssignedEvents="'OnClick'"
+                    OriginalOwnerID="'{40B5EC08-C2AF-4098-BE77-F4512EADE1A3}'"
+                    CanBeSelectedAtDesignTime="True"
+                    IsDesignVisible="True"
+                    NeedsMovingHandle="False"
+                    TabOrder="0"
+                    BorderWidth="265"
+                    BorderStyle="bsSingle"
+                    BorderColor="11974326"
+                    Color="15987699"
+                    Transparent="False"
+                    Caption="'Button2'"
+                    GroupIndex="0"
+                    Icon.VertAlign="taVerticalCenter"
+                    Icon.HorzMargin="5"
+                    Alignment="taCenter"
+                    Padding.Left="0"
+                    Padding.Top="0"
+                    Padding.Right="0"
+                    Padding.Bottom="0"
+                    Font.Charset="DEFAULT_CHARSET"
+                    Font.Color="1579032"
+                    Font.Height="-13"
+                    Font.Name="'Arial'"
+                    Visible="False"
+                    OnClick="Button2Click">
+                    <BorderSides mfk:type="set">
+                        <bsLeft />
+                        <bsTop />
+                        <bsRight />
+                        <bsBottom />
+                    </BorderSides>
+                    <Font.Style mfk:type="set" />
+                    <ControlStyles mfk:type="collection">
+                        <item SProps="'Button.Default|Effect,Color,BorderColor,BorderStyle,BorderWidth,Alignment,Width,Height,PaddingBottom,Cursor'"
+                            Font.SProps="'Color,Name,Style,Size'"
+                            Icon.SProps="'Picture,VertAlign,HorzAlign,VertMargin,HorzMargin'" />
+                    </ControlStyles>
+                    <mfk:object mfk:class="TWebButtonImageEffect"
+                        Stretch="True"
+                        BackgroundImage="'Button2.png'"
+                        Client_Left="1"
+                        Client_Top="1"
+                        Client_Right="153"
+                        Client_Bottom="40"
+                        TextEffect.Font.Charset="DEFAULT_CHARSET"
+                        TextEffect.Font.Color="1579032"
+                        TextEffect.Font.Height="-13"
+                        TextEffect.Font.Name="'Arial'"
+                        TextEffect.TextAlignment="taCenter"
+                        TextEffect.VerticalAlign="taVerticalCenter"
+                        TextEffect.Text="'Button2'"
+                        TextEffect.WordWrap="False"
+                        TextEffect.Multiline="False">
+                        <TextEffect.Font.Style mfk:type="set" />
+                    </mfk:object>
+                </mfk:object>
+            </mfk:object>
+            <mfk:object mfk:name="DocumentHeader"
+                mfk:class="Band"
+                Left="0"
+                Top="0"
+                Width="211667"
+                Height="0"
+                Cursor="crDefault"
+                Margins.Left="0"
+                Margins.Top="0"
+                Margins.Right="0"
+                Margins.Bottom="0"
+                ShowRuntimeStates="False"
+                OriginalOwnerID="'{40B5EC08-C2AF-4098-BE77-F4512EADE1A3}'"
+                CanBeSelectedAtDesignTime="True"
+                IsDesignVisible="True"
+                NeedsMovingHandle="True"
+                ShadowCopyRequired="False"
+                Locked="False"
+                Layout="lAbsolute"
+                BorderStyle="bsNone"
+                BorderWidth="0"
+                BorderColor="15987957"
+                Color="clNone"
+                CanGrow="Yes"
+                CanShrink="True"
+                NavigationBar="'Buttons:Space,FirstRecord,PreviousRecord,CurrentRecord,NextRecord,LastRecord,RecordCount,Separator,Refresh,Submit,Space,NewRecord,DeleteRecord,EditRecord,Space;'"
+                BandTypeValue="btDocumentHeader">
+                <BorderSides mfk:type="set">
+                    <bsLeft />
+                    <bsTop />
+                    <bsRight />
+                    <bsBottom />
+                </BorderSides>
+                <ControlStyles mfk:type="collection">
+                    <item SProps="'Band.Default|Color,BorderColor,Effect,BorderWidth,BorderStyle,Cursor'"
+                        Font.SProps="'Size,Color,Name'" />
+                </ControlStyles>
+            </mfk:object>
+            <mfk:object mfk:name="DocumentFooter"
+                mfk:class="Band"
+                Left="0"
+                Top="214312"
+                Width="211667"
+                Height="0"
+                Cursor="crDefault"
+                Margins.Left="0"
+                Margins.Top="0"
+                Margins.Right="0"
+                Margins.Bottom="0"
+                ShowRuntimeStates="False"
+                OriginalOwnerID="'{40B5EC08-C2AF-4098-BE77-F4512EADE1A3}'"
+                CanBeSelectedAtDesignTime="True"
+                IsDesignVisible="True"
+                NeedsMovingHandle="True"
+                ShadowCopyRequired="False"
+                Locked="False"
+                Layout="lAbsolute"
+                BorderStyle="bsNone"
+                BorderWidth="0"
+                BorderColor="15987957"
+                Color="clNone"
+                CanGrow="Yes"
+                CanShrink="True"
+                NavigationBar="'Buttons:Space,FirstRecord,PreviousRecord,CurrentRecord,NextRecord,LastRecord,RecordCount,Separator,Refresh,Submit,Space,NewRecord,DeleteRecord,EditRecord,Space;'"
+                BandTypeValue="btDocumentFooter">
+                <BorderSides mfk:type="set">
+                    <bsLeft />
+                    <bsTop />
+                    <bsRight />
+                    <bsBottom />
+                </BorderSides>
+                <ControlStyles mfk:type="collection">
+                    <item SProps="'Band.Default|Color,BorderColor,Effect,BorderWidth,BorderStyle,Cursor'"
+                        Font.SProps="'Size,Color,Name'" />
+                </ControlStyles>
+            </mfk:object>
+        </mfk:object>
+    </mfk:properties>
+    <mfk:server>
+        <![CDATA[
+        Unit Form1;
+
+        Interface
+
+        Type
+        Form1 = Class(Form)
+            Button1               : Button;
+            Listbox_SearchResults : ListBox;
+            Button2               : Button;
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+        End;
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:server>
+    <mfk:browser>
+        <![CDATA[
+        Unit Form1;
+
+        Interface
+        Uses
+            SystemWebMethod,
+            SystemInternalServices;
+
+        Type
+        Form1 = Class(Form)
+            Button1               : Button;
+            Listbox_SearchResults : ListBox;
+            Button2               : Button;
+            Procedure Button1Click(Event: TDOMEvent); Message;
+            Procedure Button2Click(Event: TDOMEvent); Message;
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+                Procedure CrossRateCallBack  ( SoapClient : WebMethod );
+                Procedure DisplayCoordinates ( SoapClient : WebMethod );
+
+        End;
+
+        Implementation
+
+        {...............................................................................}
+        Procedure Form1.CrossRateCallBack ( SoapClient : WebMethod );
+        Begin
+            If SoapClient.FaultCode.IsEmpty Then
+            Begin
+
+            End;
+        End;
+        {...............................................................................}
+
+        {...............................................................................}
+        Procedure Form1.DisplayCoordinates ( SoapClient : WebMethod );
+        Var
+            i : Integer;
+        Begin
+
+            If SoapClient.FaultCode.IsEmpty Then
+            Begin
+
+               //  For i := 0 to TTGetCityPlayGround(SoapClient).Coordinates.size - 0 Do
+                // Begin
+
+                ////      Listbox_SearchResults.addItemWithValue(
+               //                                              TTGetCityPlayGround(SoapClient).Coordinates.CorrdinateList[i].Lat,
+                //                                             TTGetCityPlayGround(SoapClient).Coordinates.CorrdinateList[i].long
+               // /                                             );
+               //  End;
+
+            End;
+        End;
+        {...............................................................................}
+
+
+        Procedure Form1.Button1Click(Event: TDOMEvent);
+        Var
+            WM : TwmOpenParks;
+        Begin
+
+            WM                                      := TwmOpenParks.Create;
+            WM.UseProxyServer                       := False;
+            WM.ServiceURL                           := '?cls=soap';
+            WM.OnWebMethodReturn                    := @CrossRateCallBack;
+            WM.Execute;
+
+        End;
+
+        Procedure Form1.Button2Click(Event: TDOMEvent);
+        Begin
+
+
+        End;
+
+        End.
+        ]]>
+    </mfk:browser>
+</mfk:MorfikFile>

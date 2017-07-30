@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="FastLookup" RemoteHost="" WebMethod="" />
+        <mfk:section mfk:name="GridOptions"
+            GridCol0="18"
+            GridCol1="120"
+            GridCol2="120"
+            GridCol3="120"
+            GridCol4="80"
+            GridCol5="1028" />
+        <mfk:section mfk:name="WebMethods" WSParameterCount="0" />
+        <mfk:section mfk:name="General Fields" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="Editor Options">
+            <mfk:section mfk:name="Collapsed Lines" />
+        </mfk:section>
+    </mfk:config>
+    <mfk:server>
+        <![CDATA[
+        Unit wmImportCSV;
+
+        Interface
+        Uses
+           SystemJSON,
+           SystemClasses,
+           SystemDatabase,
+           SystemGraphics,
+           SystemServer,
+           SystemCatalog,
+           SystemUtilities,
+           SystemConnectorsDB,
+           SystemConnectors;
+
+        Type
+        wmImportCSV = Class(WebMethod)
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+            Procedure Execute; override;
+
+            Procedure DeletTableCSV;
+            Procedure DeletTableCSVToilets;
+
+            Procedure UpdateParksInfo(
+                                              ALat: String;
+                                              ALong: String;
+                                              AFID: String;
+                                              AOBJECTID: String;
+                                              AType_Descr: String;
+                                              APark_Name: String;
+                                              ARubbish_bi: String;
+                                              AToilets: String;
+                                              AUniversal_: String;
+                                              AShelter: String;
+                                              ABarbecues: String;
+                                              Apicnic_tab: String;
+                                              ASeating: String;
+                                              ADrinking_f: String;
+                                              APlay_equip: String;
+                                              ARecreation: String;
+                                              AWalking_tr: String;
+                                              ADogs_NOT_p: String;
+                                              ADogs_on_le: String;
+                                              ADogs_off_l: String;
+                                              AShade_tree: String;
+                                              AHistoric_S: String;
+                                              ASuitable_f: String;
+                                              AWebsite: String;
+                                              AORIG_FID: String;
+                                              AFACILITYID: String;
+                                              ANAMEPark: String;
+                                              AFULLADDR: String;
+                                              AOPERHOURS: String;
+                                              AOPERDAYS: String;
+                                              APARKURL: String;
+                                              APhotoURL: String
+                                           );
+
+            Procedure updateToilets(    AOBJECTID : String;
+                                                        ADESCRPT : String;
+                                                        AAREA : String;
+                                                        ALat : String;
+                                                        ALong : String;
+                                                        ATYPEOF : String
+                                                        );
+        End;
+
+        Implementation
+
+        {..............................................................................}
+        Procedure wmImportCSV.UpdateParksInfo(    ALat: String;
+                                                      ALong: String;
+                                                      AFID: String;
+                                                      AOBJECTID: String;
+                                                      AType_Descr: String;
+                                                      APark_Name: String;
+                                                      ARubbish_bi: String;
+                                                      AToilets: String;
+                                                      AUniversal_: String;
+                                                      AShelter: String;
+                                                      ABarbecues: String;
+                                                      Apicnic_tab: String;
+                                                      ASeating: String;
+                                                      ADrinking_f: String;
+                                                      APlay_equip: String;
+                                                      ARecreation: String;
+                                                      AWalking_tr: String;
+                                                      ADogs_NOT_p: String;
+                                                      ADogs_on_le: String;
+                                                      ADogs_off_l: String;
+                                                      AShade_tree: String;
+                                                      AHistoric_S: String;
+                                                      ASuitable_f: String;
+                                                      AWebsite: String;
+                                                      AORIG_FID: String;
+                                                      AFACILITYID: String;
+                                                      ANAMEPark: String;
+                                                      AFULLADDR: String;
+                                                      AOPERHOURS: String;
+                                                      AOPERDAYS: String;
+                                                      APARKURL: String;
+                                                      APhotoURL: String
+            );
+
+                Function GetFieldNamesAccount(IsParam : Boolean) : String;
+                Procedure AddField(FN : String);
+                Begin
+                    If Not Result.IsEmpty Then
+                       Result := Result + ',';
+
+                    If IsParam Then Result := Result + ':' + FN
+                               Else Result := Result +       '"' + FN + '"';
+                End;
+            Begin
+               Result := '';
+               AddField('Lat');
+               AddField('Long');
+               AddField('FID');
+               AddField('OBJECTID');
+               AddField('Type_Descr');
+               AddField('Park_Name');
+               AddField('Rubbish_bi');
+               AddField('Toilets');
+               AddField('Universal_');
+               AddField('Shelter');
+               AddField('Barbecues');
+               AddField('picnic_tab');
+               AddField('Seating');
+               AddField('Drinking_f');
+               AddField('Play_equip');
+               AddField('Recreation');
+               AddField('Walking_tr');
+               AddField('Dogs_NOT_p');
+               AddField('Dogs_on_le');
+               AddField ('Dogs_off_l');
+               AddField('Shade_tree');
+               AddField('Historic_S');
+               AddField('Suitable_f');
+               AddField('Website');
+               AddField('ORIG_FID');
+               AddField('FACILITYID');
+               AddField('NAMEPark');
+               AddField('FULLADDR');
+               AddField('OPERHOURS');
+               AddField('OPERDAYS');
+               AddField('PARKURL');
+               AddField('PhotoURL');
+
+            End;
+        Var
+            SQL     : String;
+            Command : TAnyDbRecordset;
+            MainHostTable : String;
+
+        Begin
+
+             MainHostTable := 'tblPlayGround';
+
+             SQL := 'INSERT INTO "' + MainHostTable + '" (' + GetFieldNamesAccount(False) + ') VALUES (' + GetFieldNamesAccount( TRUE ) + ')';
+
+             Command := DefaultDBConnection.CreateDBRecordset(SQL);
+             Try
+                 Command.Prepare;
+                 Command.ParamByName('Lat').AsString := ALong;
+                 Command.ParamByName('Long').AsString := ALat; 
+                 Command.ParamByName('FID').AsString := AFID;
+                 Command.ParamByName('OBJECTID').AsString := AOBJECTID;
+                 Command.ParamByName('Type_Descr').AsString := AType_Descr;
+                 Command.ParamByName('Park_Name').AsString := APark_Name;
+                 Command.ParamByName('Rubbish_bi').AsString := ARubbish_bi;
+                 Command.ParamByName('Toilets').AsString := AToilets;
+                 Command.ParamByName('Universal_').AsString := AUniversal_;
+                 Command.ParamByName('Shelter').AsString := AShelter;
+                 Command.ParamByName('Barbecues').AsString := ABarbecues;
+                 Command.ParamByName('picnic_tab').AsString := Apicnic_tab;
+                 Command.ParamByName('Seating').AsString := ASeating;
+                 Command.ParamByName('Drinking_f').AsString := ADrinking_f;
+                 Command.ParamByName('Play_equip').AsString := APlay_equip;
+                 Command.ParamByName('Recreation').AsString := ARecreation;
+                 Command.ParamByName('Walking_tr').AsString := AWalking_tr;
+                 Command.ParamByName('Dogs_NOT_p').AsString := ADogs_NOT_p;
+                 Command.ParamByName('Dogs_on_le').AsString := ADogs_on_le;
+                 Command.ParamByName('Dogs_off_l').AsString := ADogs_off_l;
+                 Command.ParamByName('Shade_tree').AsString := ADogs_off_l;
+                 Command.ParamByName('Historic_S').AsString := AHistoric_S;
+                 Command.ParamByName('Suitable_f').AsString := ASuitable_f;
+                 Command.ParamByName('Website').AsString := AWebsite;
+                 Command.ParamByName('ORIG_FID').AsString := AORIG_FID;
+                 Command.ParamByName('FACILITYID').AsString := AFACILITYID;
+                 Command.ParamByName('NAMEPark').AsString := ANAMEPark;
+                 Command.ParamByName('FULLADDR').AsString := AFULLADDR;
+                 Command.ParamByName('OPERHOURS').AsString := AOPERHOURS;
+                 Command.ParamByName('OPERDAYS').AsString := AOPERDAYS;
+                 Command.ParamByName('PARKURL').AsString := APARKURL;
+                 Command.ParamByName('PhotoURL').AsString := APhotoURL;
+
+                 Command.Execute;
+                 Command.Active := False;
+              Finally
+                 Command.free;
+              End;
+        End;
+        {..............................................................................}
+
+
+        {..............................................................................}
+        Procedure wmImportCSV.updateToilets(
+                                               AOBJECTID : String;
+                                               ADESCRPT  : String;
+                                               AAREA     : String;
+                                               ALat      : String;
+                                               ALong     : String;
+                                               ATYPEOF   : String
+                                           );
+
+                Function GetFieldNamesAccount(IsParam : Boolean) : String;
+                Procedure AddField(FN : String);
+                Begin
+                    If Not Result.IsEmpty Then
+                       Result := Result + ',';
+
+                    If IsParam Then Result := Result + ':' + FN
+                               Else Result := Result +       '"' + FN + '"';
+                End;
+            Begin
+               Result := '';
+               AddField('OBEJECTID');
+               AddField('DESCRPT');
+               AddField('AREALOC');
+               AddField('TYPEOF');
+               AddField('LAT');
+               AddField('LONG');
+            End;
+        Var
+            SQL     : String;
+            Command : TAnyDbRecordset;
+            MainHostTable : String;
+
+        Begin
+
+             MainHostTable := 'tblHobartToilets';
+
+             SQL := 'INSERT INTO "' + MainHostTable + '" (' + GetFieldNamesAccount(False) + ') VALUES (' + GetFieldNamesAccount( TRUE ) + ')';
+
+             Command := DefaultDBConnection.CreateDBRecordset(SQL);
+             Try
+                 Command.Prepare;
+                 Command.ParamByName('OBEJECTID').AsString := AOBJECTID;
+                 Command.ParamByName('DESCRPT').AsString   := ADESCRPT;
+                 Command.ParamByName('AREALOC').AsString   := AAREA;
+                 Command.ParamByName('LAT').AsString       := ALAT;
+                 Command.ParamByName('LONG').AsString      := ALONG;
+                 Command.ParamByName('TYPEOF').AsString    := ATYPEOF;
+
+
+                 Command.Execute;
+                 Command.Active := False;
+              Finally
+                 Command.free;
+              End;
+        End;
+        {..............................................................................}
+
+        {..............................................................................}
+        Procedure wmImportCSV.DeletTableCSV;
+        Var
+            SQLCommand : TSQLCommand;
+        Begin
+            Try
+                SQLCommand := DefaultDBConnection.CreateSQLCommand('DELETE FROM "tblPlayGround"');
+                Try
+                    SQLCommand.Prepare;
+                    SQLCommand.Execute;
+                Finally
+                    DefaultDBConnection.DestroySQLCommand(SQLCommand);
+                End;
+            Except
+            End;
+
+        End;
+        {..............................................................................}
+
+
+        {..............................................................................}
+        Procedure wmImportCSV.DeletTableCSVToilets;
+        Var
+            SQLCommand : TSQLCommand;
+        Begin
+            Try
+                SQLCommand := DefaultDBConnection.CreateSQLCommand('DELETE FROM "tblHobartToilets"');
+                Try
+                    SQLCommand.Prepare;
+                    SQLCommand.Execute;
+                Finally
+                    DefaultDBConnection.DestroySQLCommand(SQLCommand);
+                End;
+            Except
+            End;
+
+        End;
+        {..............................................................................}
+
+        {..............................................................................}
+        Procedure wmImportCSV.Execute;
+        Var
+            TempList                    : TStringList;
+
+            TempToiletList                    : TStringList;
+
+            i ,k: Integer;
+
+            Lat: String;
+            Long: String;
+            FID: String;
+            OBJECTID: String;
+            Type_Descr: String;
+            Park_Name: String;
+            Rubbish_bi: String;
+            Toilets: String;
+            Universal_: String;
+            Shelter: String;
+            Barbecues: String;
+            picnic_tab: String;
+            Seating: String;
+            Drinking_f: String;
+            Play_equip: String;
+            Recreation: String;
+            Walking_tr: String;
+            Dogs_NOT_p: String;
+            Dogs_on_le: String;
+            Dogs_off_l: String;
+            Shade_tree: String;
+            Historic_S: String;
+            Suitable_f: String;
+            Website: String;
+            ORIG_FID: String;
+            FACILITYID: String;
+            NAMEPark: String;
+            FULLADDR: String;
+            OPERHOURS: String;
+            OPERDAYS: String;
+            PARKURL: String;
+            PhotoURL: String;
+
+            NewLineStr  : String;
+
+            RspJSONStr  : AnsiString;
+
+            LData                : TJSONObject;
+
+
+            LOBJECTID : String;
+            LDESCRPT : String;
+            LAREA : String;
+            toiLat : String;
+            toiLong : String;
+
+            LTYPEOF : String;
+
+        Begin
+
+
+            TempList := TStringList.Create;
+
+
+            Try
+                TempList.LoadFromFile(ExtractFiledir(ParamStr(0)) + '\Playgrounds_shape.csv');
+
+                DeletTableCSV;
+
+                For k := 1 To TempList.Count - 1 Do
+                Begin
+                        Lat        :='';
+                        Long       :='';
+                        FID        :='';
+                        OBJECTID   :='';
+                        Type_Descr :='';
+                        Park_Name  :='';
+                        Rubbish_bi :='';
+                        Toilets    :='';
+                        Universal_ :='';
+                        Shelter    :='';
+                        Barbecues  :='';
+                        picnic_tab :='';
+                        Seating    :='';
+                        Drinking_f :='';
+                        Play_equip :='';
+                        Recreation :='';
+                        Walking_tr :='';
+                        Dogs_NOT_p :='';
+                        Dogs_on_le :='';
+                        Dogs_off_l :='';
+                        Shade_tree :='';
+                        Historic_S :='';
+                        Suitable_f :='';
+                        Website    :='';
+                        ORIG_FID   :='';
+                        FACILITYID :='';
+                        NAMEPark   :='';
+                        FULLADDR   :='';
+                        OPERHOURS  :='';
+                        OPERDAYS   :='';
+                        PARKURL    :='';
+                        PhotoURL   :='';
+
+                        NewLineStr := '';
+                        NewLineStr := ReplaceString(TempList.ValueFromIndex[k],'"','');
+
+                        ShowMessage ('NewLineStr :' + NewLineStr);
+
+
+                        i   := Pos(',',NewLineStr);
+
+                        Lat := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Long := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        FID := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        OBJECTID := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        Type_Descr := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Park_Name := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        Rubbish_bi := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        Toilets := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Universal_ := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Shelter := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Barbecues := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        picnic_tab := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Seating := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        Drinking_f := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                         i   := Pos(',',NewLineStr);
+                        Play_equip := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Recreation := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Walking_tr := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Dogs_NOT_p := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Dogs_on_le := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        Dogs_off_l := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        Shade_tree := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Historic_S := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        Suitable_f := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        Website := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        ORIG_FID := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        FACILITYID := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        NAMEPark := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        FULLADDR := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+
+                        i   := Pos(',',NewLineStr);
+                        FULLADDR := FULLADDR + ','+ Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                         i   := Pos(',',NewLineStr);
+                        OPERHOURS := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        OPERDAYS := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        i   := Pos(',',NewLineStr);
+                        PARKURL := Copy(NewLineStr,0,i-1);
+                        Delete(NewLineStr, 1, i);
+
+                        PhotoURL := NewLineStr;
+
+                        UpdateParksInfo(
+                                      Lat,
+                                      Long,
+                                      FID,
+                                      OBJECTID,
+                                      Type_Descr,
+                                      Park_Name,
+                                      Rubbish_bi,
+                                      Toilets,
+                                      Universal_,
+                                      Shelter,
+                                      Barbecues,
+                                      picnic_tab,
+                                      Seating,
+                                      Drinking_f,
+                                      Play_equip,
+                                      Recreation,
+                                      Walking_tr,
+                                      Dogs_NOT_p,
+                                      Dogs_on_le,
+                                      Dogs_off_l,
+                                      Shade_tree,
+                                      Historic_S,
+                                      Suitable_f,
+                                      Website,
+                                      ORIG_FID,
+                                      FACILITYID,
+                                      NAMEPark,
+                                      FULLADDR,
+                                      OPERHOURS,
+                                      OPERDAYS,
+                                      PARKURL,
+                                      PhotoURL
+                                 );
+                End;
+
+            Finally
+
+               TempList.Free;
+
+            End;
+
+
+            TempToiletList := TStringList.Create;
+
+            Try
+                TempToiletList.LoadFromFile(ExtractFiledir(ParamStr(0)) + '\Toilets_Raw.geojson');
+
+                DeletTableCSVToilets;
+                Try
+                     LData := TJSONObject( JSON.Parse(TempToiletList.text) );
+
+
+                     For i := 0 to (LData.Field['features'].count -1 ) Do
+                     Begin
+
+                         LOBJECTID := LData.Field['features'].field[i].field['properties'].field['OBJECTID'].value;
+                         LDESCRPT  := LData.Field['features'].field[i].field['properties'].field['DESC_'].value;
+
+                          LTYPEOF  := LData.Field['features'].field[i].field['properties'].field['TYPE_'].value;
+                          LAREA    := LData.Field['features'].field[i].field['properties'].field['AREA'].value;
+                          toiLong  := LData.Field['features'].field[i].field['geometry'].field['coordinates'].field[0].value;
+                          toiLat   := LData.Field['features'].field[i].field['geometry'].field['coordinates'].field[1].value;
+
+                          ShowMessage( LDESCRPT +' '+ toiLong +' '+ toiLat );
+
+                          updateToilets(
+                                             LOBJECTID,
+                                             LDESCRPT,
+                                             LAREA,
+                                             toiLat,
+                                             toiLong,
+                                             LTYPEOF
+                                           );
+                     End;
+
+
+
+
+                    { AchargeToken         := LData.Field['response'].Field['token']               .value;
+                     LCardCardStatus      := LData.Field['response'].Field['success']             .value;
+                     AProcessStatus       := LData.Field['response'].Field['status_message']      .value;
+                     AcardScheme          := LData.Field['response'].Field['card'].Field['scheme'].value;
+                     AprincipalAmount     := LData.Field['response'].Field['amount']              .value;
+                     ACurrencyCode        := LData.Field['response'].Field['currency']            .value;
+                     AsettlementCurrency  := LData.Field['response'].Field['settlement_currency'] .value;
+                     AOrderNumber         := LData.Field['response'].Field['metadata'].Field['ordernumber'].value;  }
+
+
+                 Finally
+                     LData.free;
+                 End;
+
+            Finally
+               TempToiletList.free;
+            End;
+
+
+
+        End;
+
+        End.
+        ]]>
+    </mfk:server>
+    <mfk:browser>
+        <![CDATA[
+        Unit wmImportCSV;
+
+        Interface
+
+        Type
+        wmImportCSV = Class(WebMethod)
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+            Procedure HandleResponse; override;
+        End;
+
+        Implementation
+
+        Procedure wmImportCSV.HandleResponse;
+        Begin
+
+        End;
+
+        End.
+        ]]>
+    </mfk:browser>
+</mfk:MorfikFile>

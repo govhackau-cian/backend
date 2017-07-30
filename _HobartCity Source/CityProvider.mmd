@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="General Fields" ModuleKind="Server" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="Editor Options">
+            <mfk:section mfk:name="Collapsed Lines" />
+        </mfk:section>
+    </mfk:config>
+    <mfk:server>
+        <![CDATA[
+        Unit CityProvider;
+
+        Interface
+        Uses
+           CityServices,
+           SystemConnectors,
+           SystemServer,
+           SystemCatalog,
+           SystemUtilities,
+           SystemClasses;
+
+        Type
+
+        {......................................................................}
+        TFBCityProvider= Class(TCityServicesProvider)
+
+            HTTPServer : THTTPServer;
+            Connection : TIBOServiceConnection;
+
+          Private
+
+          Public
+
+            Constructor Create ( aHTTPServer : THTTPServer );   Override;
+
+            Procedure GetListOfPlayAreaJSON ( aCity  : String;  Var aJsonList : String ); Override;
+            Procedure GetListOfToilets      ( aCity  : String;  Var aJsonList : String ); Override;
+
+            Procedure GetListParksJSON ( aCity  : String; Var aJsonList : String );       Override;
+
+
+        End;
+        {......................................................................}
+
+
+        Const
+
+        {...............................................................................}
+            cCRLF               = '';//#13 + #10;
+        {...............................................................................}
+
+
+        Implementation
+
+
+        {......................................................................}
+        Constructor TFBCityProvider.Create ( aHTTPServer : THTTPServer );
+        Begin
+            Inherited Create(aHTTPServer);
+
+            HTTPServer := aHTTPServer;
+
+            Try
+                Connection := HTTPServer.DefaultDBConnection;
+
+            Finally
+
+
+            End;
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Procedure  TFBCityProvider.GetListOfPlayAreaJSON ( aCity  : String;  Var aJsonList : String );
+
+          Function CheckExisting(aJson :String) : Boolean;
+          Begin
+              Result := False;
+              If Pos('rubbishbins',aJson)      > 0 Then Result := True;
+              If Pos('shelter',aJson)          > 0 Then Result := True;
+              If Pos('barbecues',aJson)        > 0 Then Result := True;
+              If Pos('picnictables',aJson)     > 0 Then Result := True;
+              If Pos('seating',aJson)          > 0 Then Result := True;
+              If Pos('playequipment',aJson)    > 0 Then Result := True;
+              If Pos('dogsnotpermitted',aJson) > 0 Then Result := True;
+              If Pos('shadetrees',aJson)       > 0 Then Result := True;
+          End;
+
+
+        Var
+            Recordset     : TAnyDbRecordset;
+            SQL           : String;
+            MainTable     : String;
+            S             : String;
+
+        Begin
+
+            MainTable := 'tblPlayGround';
+
+            SQL       := 'SELECT "Lat","Long","Dogs_NOT_p","Play_equip", "Seating","Park_Name","Rubbish_bi","Shelter","Shade_tree","Barbecues","picnic_tab" FROM "' + MainTable + '"';
+            Recordset := HTTPServer.DefaultDBConnection.CreateDBRecordset( SQL );
+            Try
+
+                Recordset.Prepare;
+                Recordset.Active := True;
+                Recordset.First;
+
+                aJsonList :='{"type":"FeatureCollection",'+ cCRLF +
+                            '"features":[ ' +  cCRLF;
+
+                While Not RecordSet.Eof Do
+                Begin
+                    S :=  '{'+
+                          '"type":"Feature",'  +
+                          '"properties":{'     +
+                          '"DESC_": "' + RecordSet.FieldByName('Park_Name' ).AsString + '",' +
+                          '"TYPE_":"Playground",'    +
+                          '"ICONS_": [';
+
+                         If  RecordSet.FieldByName('Rubbish_bi' ).AsString.toUpper = 'YES' Then
+                                 S := S + '"rubbishbins"';
+
+                         If  RecordSet.FieldByName('Shelter' ).AsString.toUpper = 'YES' Then
+                         Begin
+                              If  CheckExisting(S) Then
+                                 S := S + ',"shelter"'
+                              Else
+                                 S := S + '"shelter"';
+                         End;
+
+
+                         If  RecordSet.FieldByName('Barbecues' ).AsString.toUpper  = 'YES' Then
+                         Begin
+                              If  CheckExisting(S) Then
+                                 S := S + ',"barbecues"'
+                              Else
+                                 S := S + '"barbecues"';
+
+                         End;
+
+                         If  RecordSet.FieldByName('picnic_tab' ).AsString.toUpper  = 'YES' Then
+                         Begin
+                              If  CheckExisting(S) Then
+                                 S := S + ',"picnictables"'
+                              Else
+                                 S := S + '"picnictables"';
+
+                         End;
+
+                         If  RecordSet.FieldByName('picnic_tab' ).AsString.toUpper  = 'YES' Then
+                         Begin
+                              If  CheckExisting(S) Then
+                                 S := S + ',"picnictables"'
+                              Else
+                                 S := S + '"picnictables"';
+
+                         End;
+
+
+                         If  RecordSet.FieldByName('Seating' ).AsString.toUpper  = 'YES' Then
+                         Begin
+                              If  CheckExisting(S) Then
+                                 S := S + ',"seating"'
+                              Else
+                                 S := S + '"seating"';
+
+                         End;
+
+                         If  RecordSet.FieldByName('Play_equip' ).AsString.toUpper  = 'YES' Then
+                         Begin
+                              If  CheckExisting(S) Then
+                                 S := S + ',"playequipment"'
+                              Else
+                                 S := S + '"playequipment"';
+
+                         End;
+
+                         If  RecordSet.FieldByName('Dogs_NOT_p' ).AsString.toUpper  = 'YES' Then
+                         Begin
+                              If  CheckExisting(S) Then
+                                 S := S + ',"dogsnotpermitted"'
+                              Else
+                                 S := S + '"dogsnotpermitted"';
+
+                         End;
+
+                         If  RecordSet.FieldByName('Shade_tree' ).AsString.toUpper  = 'YES' Then
+                         Begin
+                              If  CheckExisting(S) Then
+                                 S := S + ',"shadetrees"'
+                              Else
+                                 S := S + '"shadetrees"';
+
+                         End;
+
+
+                         S := S +  ']}, '+   cCRLF +
+                               '"geometry":{'+   cCRLF +
+                               '"type":"Point",'+   cCRLF +
+                               '    "coordinates":['+ RecordSet.FieldByName('Long' ).AsString.trim+','+RecordSet.FieldByName('Lat' ).AsString.trim+']'+ cCRLF +
+                              '}';
+
+                     If ( RecordSet.RecordCount <> Recordset.RecordNo ) Then
+                        S :=  S + '},'+   cCRLF
+                     Else
+                        S := S + '}'+     cCRLF;
+
+                    aJsonList := aJsonList + S;
+                    RecordSet.next;
+                End;
+
+                aJsonList := aJsonList + ']}'+ cCRLF;
+
+            Finally
+                Recordset.Free;
+            End;
+
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Procedure TFBCityProvider.GetListOfToilets      ( aCity  : String;  Var aJsonList : String );
+        Var
+            Recordset     : TAnyDbRecordset;
+            SQL           : String;
+            MainTable : String;
+            S             : String;
+            Des           : String;
+        Begin
+
+            MainTable := 'tblHobartToilets';
+
+            SQL       := 'SELECT "LAT","LONG", "DESCRPT" FROM "' + MainTable + '"';
+            Recordset := HTTPServer.DefaultDBConnection.CreateDBRecordset( SQL );
+            Try
+                aJsonList := '';
+                Recordset.Prepare;
+                Recordset.Active := True;
+                Recordset.First;
+
+                aJsonList :='{"type":"FeatureCollection",'+ cCRLF +
+                            '"features":[ ' +  cCRLF;
+
+
+                While Not RecordSet.Eof Do
+                Begin
+                    Des :=   RecordSet.FieldByName('DESCRPT' ).AsString;
+
+                    S := '{'+              + cCRLF +
+                    '"type":"Feature",'  + cCRLF +
+                    '"properties":{'  + cCRLF +
+                    '"DESC_": "' + Des + '",'+ cCRLF +
+                    '"TYPE_":"PublicToilet"'+
+                    '}, '+   cCRLF +
+                    '"geometry":{'+   cCRLF +
+                    '"type":"Point",'+   cCRLF +
+                    '    "coordinates":['+ RecordSet.FieldByName('LONG' ).AsString.trim+','+RecordSet.FieldByName('LAT' ).AsString.trim+']'+ cCRLF +
+                    '}';
+                    if ( RecordSet.RecordCount <> Recordset.RecordNo ) Then
+                        S :=  S + '},'+   cCRLF
+                    Else
+                        S := S + '}'+     cCRLF;
+
+                    aJsonList := aJsonList + S;
+                    RecordSet.next;
+                End;
+
+                aJsonList := aJsonList + ']}'+ cCRLF;
+
+            Finally
+                Recordset.Free;
+            End;
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Procedure TFBCityProvider.GetListParksJSON      ( aCity  : String;  Var aJsonList : String );
+        Var
+            Recordset     : TAnyDbRecordset;
+            SQL           : String;
+            MainTable : String;
+            S             : String;
+            Des           : String;
+        Begin
+
+            MainTable := 'tblOPenPark';
+
+            SQL       := 'SELECT "LAT","LONG", "DESCRPT" FROM "' + MainTable + '"';
+            Recordset := HTTPServer.DefaultDBConnection.CreateDBRecordset( SQL );
+            Try
+                aJsonList := '';
+                Recordset.Prepare;
+                Recordset.Active := True;
+                Recordset.First;
+
+                aJsonList :='{"type":"FeatureCollection",'+ cCRLF +
+                            '"features":[ ' +  cCRLF;
+
+
+                While Not RecordSet.Eof Do
+                Begin
+                    Des :=   RecordSet.FieldByName('DESCRPT' ).AsString;
+
+                    S := '{'+              + cCRLF +
+                    '"type":"Feature",'  + cCRLF +
+                    '"properties":{'  + cCRLF +
+                    '"DESC_": "' + Des + '",'+ cCRLF +
+                    '"TYPE_":"Park"'+
+                    '}, '+   cCRLF +
+                    '"geometry":{'+   cCRLF +
+                    '"type":"Point",'+   cCRLF +
+                    '    "coordinates":['+ RecordSet.FieldByName('LAT' ).AsString.trim+','+RecordSet.FieldByName('LONG' ).AsString.trim+']'+ cCRLF +
+                    '}';
+                    if ( RecordSet.RecordCount <> Recordset.RecordNo ) Then
+                        S :=  S + '},'+   cCRLF
+                    Else
+                        S := S + '}'+     cCRLF;
+
+                    aJsonList := aJsonList + S;
+                    RecordSet.next;
+                End;
+
+                aJsonList := aJsonList + ']}'+ cCRLF;
+
+            Finally
+                Recordset.Free;
+            End;
+        End;
+        {......................................................................}
+
+
+        End.
+        ]]>
+    </mfk:server>
+</mfk:MorfikFile>

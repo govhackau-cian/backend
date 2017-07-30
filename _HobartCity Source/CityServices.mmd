@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="General Fields" ModuleKind="Server" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="Editor Options">
+            <mfk:section mfk:name="Collapsed Lines" />
+        </mfk:section>
+    </mfk:config>
+    <mfk:server>
+        <![CDATA[
+        Unit CityServices;
+
+        Interface
+        Uses
+           SystemServerResource,
+           SystemServer,
+           SystemWebMethod,
+           SystemSerialiser,
+           SystemServerJSON;
+
+        Type
+
+        {......................................................................}
+        TCoordinateValue = Class(TSerializable)
+            Long  : String;
+            Lat   : String;
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        TListOfCoordinates = Class(TSerializable)
+            CoordinateList : List Of  TCoordinateValue;
+            Size : Integer;
+
+            Constructor Create;
+            Destructor  Destroy; Override;
+
+            Function Add  ( aCoordinate : TCoordinateValue  );
+            Function Clear( FreeObjects : Boolean = True    );
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        TCityServicesProvider = Class
+            HTTPServer : THTTPServer;
+            Constructor Create ( aHTTPServer : THTTPServer );                              Virtual;
+            Procedure GetListOfPlayAreaJSON ( aCity  : String;  Var aJsonList : String );  Virtual;
+            Procedure GetListOfToilets ( aCity  : String; Var aJsonList : String );        Virtual;
+            Procedure GetListParksJSON ( aCity  : String; Var aJsonList : String );        Virtual;
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        TAbstractWebMethod = Class(WebMethod)
+            CityServicesProvider : TCityServicesProvider; ['WSPublished=false'];
+
+            Constructor Create ( aSoapServer : Pointer );  Override;
+            Destructor Destroy;                            Override;
+        End; ['WSAbstract=true'];
+        {......................................................................}
+
+        {......................................................................}
+        PlayGrounds = Class (TAbstractWebMethod)
+           jsonstring      : String;            ['WSPublished=True','WSFieldKind=out'];
+
+           Procedure Execute; Override;
+        End;['WSPublished=true'];
+        {......................................................................}
+
+        {......................................................................}
+        ParksGrounds = Class (TAbstractWebMethod)
+           jsonstring      : String;            ['WSPublished=True','WSFieldKind=out'];
+
+           Procedure Execute; Override;
+        End;['WSPublished=true'];
+        {......................................................................}
+
+
+        {......................................................................}
+        GetToilets = Class (TAbstractWebMethod)
+           jsonstring      : String;            ['WSPublished=True','WSFieldKind=out'];
+
+           Procedure Execute; Override;
+
+        End;['WSPublished=true'];
+        {......................................................................}
+
+        {......................................................................}
+        Implementation
+        Uses
+           ServiceUtil;
+        {......................................................................}
+
+        {....................................................................}
+        Constructor TListOfCoordinates.Create;
+        Begin
+            Inherited Create;
+            CoordinateList.Init;
+            Size := 0;
+        End;
+        {...................................................................}
+
+        {...................................................................}
+        Destructor TListOfCoordinates.Destroy;
+        Var
+            i : Integer;
+        Begin
+            For i := 0 To CoordinateList.Count - 1 Do
+                CoordinateList[i].Free;
+
+            CoordinateList.Clear;
+            CoordinateList.Free;
+
+            Inherited Destroy;
+        End;
+        {..................................................................}
+
+
+        Function TListOfCoordinates.Add  ( aCoordinate : TCoordinateValue);
+        Begin
+            CoordinateList.Add(aCoordinate );
+            Inc(Size);
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Function TListOfCoordinates.Clear( FreeObjects : Boolean = True);
+        Var
+           i : Integer;
+        Begin
+            If FreeObjects Then
+                For i := 0 to CoordinateList.count - 1 Do
+                    CoordinateList[i].free;
+
+            CoordinateList.clear;
+            CoordinateList.free;
+
+            Inherited Destroy;
+        End;
+        {......................................................................}
+
+
+        {......................................................................}
+        Constructor TCityServicesProvider.Create ( aHTTPServer : THTTPServer );
+        Begin
+            HTTPServer := aHTTPServer;
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Procedure TCityServicesProvider.GetListOfPlayAreaJSON ( aCity  : String; Var aJsonList : String );
+        Begin
+        End;
+        {......................................................................}
+
+
+        {......................................................................}
+        Procedure TCityServicesProvider.GetListOfToilets     ( aCity  : String; Var aJsonList : String );
+        Begin
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Procedure TCityServicesProvider.GetListParksJSON     ( aCity  : String; Var aJsonList : String );
+        Begin
+
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Constructor TAbstractWebMethod.Create ( aSoapServer : Pointer );
+        Begin
+            Inherited Create (aSoapServer);
+            CityServicesProvider := CityProviderClass.Create(SoapServer);
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Destructor TAbstractWebMethod.Destroy;
+        Begin
+            If CityServicesProvider <> Nil Then
+                CityServicesProvider.free;
+            Inherited Destroy;
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Procedure PlayGrounds.Execute;
+        Begin
+            CityServicesProvider.GetListOfPlayAreaJSON('',jsonstring);
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Procedure GetToilets.Execute;
+        Begin
+            CityServicesProvider. GetListOfToilets('',jsonstring);
+        End;
+        {......................................................................}
+
+        {......................................................................}
+        Procedure ParksGrounds.Execute;
+        Begin
+            CityServicesProvider. GetListParksJSON('',jsonstring);
+        End;
+        {......................................................................}
+
+        End.
+        ]]>
+    </mfk:server>
+</mfk:MorfikFile>

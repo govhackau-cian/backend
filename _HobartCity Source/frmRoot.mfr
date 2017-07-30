@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="FastLookup"
+            StylesUsed="Band.Default,TextLabel.Default"
+            WidgetsUsed=""
+            CustomControlsUsed=""
+            LanguageData="frmRoot.TextLabel2.Caption=[Footer]"
+            ContentWidth="211667"
+            ContentHeight="280459"
+            DataSource=""
+            ChildForms=""
+            SubForms="Subform1,,0,140,800,800,0,1,"
+            HTMLHeaders=""
+            HyperLinks=""
+            LookupDataSources=""
+            ViewMode="0"
+            ColumnCount="1"
+            ContentLayout="0" />
+        <mfk:section mfk:name="FastLookup - Query Ports" Count="0" />
+        <mfk:section mfk:name="WebParameters" ParameterCount="1" />
+        <mfk:section mfk:name="DocumentGroup0Header" Name="GHeader0" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup0Footer" Name="GFooter0" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup0"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup1Header" Name="GHeader1" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup1Footer" Name="GFooter1" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup1"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup2Header" Name="GHeader2" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup2Footer" Name="GFooter2" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup2"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup3Header" Name="GHeader3" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup3Footer" Name="GFooter3" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup3"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup4Header" Name="GHeader4" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup4Footer" Name="GFooter4" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup4"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup5Header" Name="GHeader5" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup5Footer" Name="GFooter5" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup5"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup6Header" Name="GHeader6" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup6Footer" Name="GFooter6" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup6"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup7Header" Name="GHeader7" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup7Footer" Name="GFooter7" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup7"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup8Header" Name="GHeader8" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup8Footer" Name="GFooter8" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup8"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup9Header" Name="GHeader9" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup9Footer" Name="GFooter9" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup9"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="WebParameter0"
+            Name="ViewMode"
+            DataType="String"
+            DefaultValue="vmSingle"
+            InOut="In"
+            Description="Form data display mode"
+            DisplayValue=""
+            DefaultValueSet="1"
+            ParamKind="0" />
+        <mfk:section mfk:name="General Fields"
+            Language="0"
+            Attributes="[Hidden][Unpublished]"
+            CacheSettings="BrowserCacheStyle=0,AllowProxyCaching=1,AllowServerCaching=1,ServerCacheFreq=3600"
+            QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="DetailsBand" Name="Detail" DisplayText="Details" />
+        <mfk:section mfk:name="WebParameters" ParameterCount="1" />
+        <mfk:section mfk:name="DocumentHeaderFooter" ShowDocumentHeader="1" ShowDocumentFooter="1" />
+        <mfk:section mfk:name="PageHeaderFooter" ShowPageHeader="0" ShowPageFooter="0" />
+        <mfk:section mfk:name="DocumentEditBand" ShowEditBand="0" />
+        <mfk:section mfk:name="Editor Options">
+            <mfk:section mfk:name="Collapsed Lines" />
+        </mfk:section>
+        <mfk:section mfk:name="DocumentGroup0Header" Name="GHeader0" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup0Footer" Name="GFooter0" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup0"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup1Header" Name="GHeader1" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup1Footer" Name="GFooter1" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup1"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup2Header" Name="GHeader2" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup2Footer" Name="GFooter2" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup2"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup3Header" Name="GHeader3" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup3Footer" Name="GFooter3" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup3"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup4Header" Name="GHeader4" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup4Footer" Name="GFooter4" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup4"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup5Header" Name="GHeader5" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup5Footer" Name="GFooter5" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup5"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup6Header" Name="GHeader6" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup6Footer" Name="GFooter6" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup6"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup7Header" Name="GHeader7" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup7Footer" Name="GFooter7" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup7"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup8Header" Name="GHeader8" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup8Footer" Name="GFooter8" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup8"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="DocumentGroup9Header" Name="GHeader9" DisplayText=" Header" />
+        <mfk:section mfk:name="DocumentGroup9Footer" Name="GFooter9" DisplayText=" Footer" />
+        <mfk:section mfk:name="DocumentGroup9"
+            DataField=""
+            SortStyle="0"
+            ShowHeaderFooter="0"
+            KeepTogether="0" />
+        <mfk:section mfk:name="WebParameter0"
+            Name="ViewMode"
+            DataType="String"
+            DefaultValue="vmSingle"
+            InOut="In"
+            Description="Form data display mode"
+            DisplayValue=""
+            DefaultValueSet="1"
+            ParamKind="0" />
+    </mfk:config>
+    <mfk:properties>
+        <mfk:object mfk:name="frmRoot"
+            mfk:class="TfrmRoot"
+            Left="0"
+            Top="0"
+            Width="211667"
+            Height="284427"
+            HorzScrollBar.Visible="False"
+            VertScrollBar.Visible="False"
+            Caption="'frmRoot'"
+            ClientHeight="1075"
+            ClientWidth="800"
+            Color="clWhite"
+            Font.Charset="DEFAULT_CHARSET"
+            Font.Color="clWindowText"
+            Font.Height="-11"
+            Font.Name="'Tahoma'"
+            OldCreateOrder="False"
+            Position="poDesigned"
+            Visible="True"
+            ZoomFactor="1"
+            UID="'{0B5FBC25-C5BE-4684-A87E-A58CEAD9E8FE}'"
+            ContentWidth="211667"
+            ContentHeight="284428"
+            ColumnCount="1"
+            RowSpacing="0"
+            ColumnSpacing="10000"
+            ColumnWidth="211667"
+            ColumnHeight="211667"
+            ColumnLayout="clDownThenAcross"
+            ColumnSameAsDetail="True"
+            GroupKeepTogether="rktPerPage"
+            PageSize="10"
+            PageNavigator="False"
+            RecordNavigator="False"
+            MaxRecordsPerGroup="5"
+            MaxRecordsPerPage="-1"
+            ViewMode="vmSingle"
+            ContentLayout="clHorizontal"
+            BrowserHistory="True"
+            PixelsPerInch="96"
+            TextHeight="13">
+            <Font.Style mfk:type="set" />
+            <mfk:object mfk:name="Detail"
+                mfk:class="Band"
+                Left="0"
+                Top="38365"
+                Width="211667"
+                Height="211667"
+                Cursor="crDefault"
+                Margins.Left="0"
+                Margins.Top="0"
+                Margins.Right="0"
+                Margins.Bottom="0"
+                ShowRuntimeStates="False"
+                OriginalOwnerID="'{0B5FBC25-C5BE-4684-A87E-A58CEAD9E8FE}'"
+                CanBeSelectedAtDesignTime="True"
+                IsDesignVisible="True"
+                NeedsMovingHandle="True"
+                ShadowCopyRequired="False"
+                Locked="False"
+                Layout="lAbsolute"
+                BorderStyle="bsNone"
+                BorderWidth="0"
+                BorderColor="15987957"
+                Color="clNone"
+                CanGrow="Yes"
+                CanShrink="True"
+                NavigationBar="'Buttons:Space,FirstRecord,PreviousRecord,CurrentRecord,NextRecord,LastRecord,RecordCount,Separator,Refresh,Submit,Space,NewRecord,DeleteRecord,EditRecord,Space;'"
+                BandTypeValue="btDetail">
+                <BorderSides mfk:type="set">
+                    <bsLeft />
+                    <bsTop />
+                    <bsRight />
+                    <bsBottom />
+                </BorderSides>
+                <ControlStyles mfk:type="collection">
+                    <item SProps="'Band.Default|Color,BorderColor,Effect,BorderWidth,BorderStyle'"
+                        Font.SProps="'Size'" />
+                </ControlStyles>
+                <mfk:object mfk:name="Subform1"
+                    mfk:class="SubForm"
+                    Left="0"
+                    Top="0"
+                    Width="211667"
+                    Height="211667"
+                    Cursor="crDefault"
+                    Margins.Left="0"
+                    Margins.Top="0"
+                    Margins.Right="0"
+                    Margins.Bottom="0"
+                    Opacity="100"
+                    ShowRuntimeStates="False"
+                    OriginalOwnerID="'{0B5FBC25-C5BE-4684-A87E-A58CEAD9E8FE}'"
+                    CanBeSelectedAtDesignTime="True"
+                    IsDesignVisible="True"
+                    NeedsMovingHandle="True"
+                    ShadowCopyRequired="False"
+                    Locked="False"
+                    Layout="lAbsolute"
+                    BorderStyle="bsNone"
+                    BorderWidth="0"
+                    BorderColor="4144959"
+                    Color="clWindow"
+                    CanGrow="Yes"
+                    CanShrink="True"
+                    FormBufferLimit="20">
+                    <BorderSides mfk:type="set">
+                        <bsLeft />
+                        <bsTop />
+                        <bsRight />
+                        <bsBottom />
+                    </BorderSides>
+                </mfk:object>
+            </mfk:object>
+            <mfk:object mfk:name="DocumentHeader"
+                mfk:class="Band"
+                Left="0"
+                Top="0"
+                Width="211667"
+                Height="37042"
+                Cursor="crDefault"
+                Margins.Left="0"
+                Margins.Top="0"
+                Margins.Right="0"
+                Margins.Bottom="0"
+                ShowRuntimeStates="False"
+                OriginalOwnerID="'{0B5FBC25-C5BE-4684-A87E-A58CEAD9E8FE}'"
+                CanBeSelectedAtDesignTime="True"
+                IsDesignVisible="True"
+                NeedsMovingHandle="True"
+                ShadowCopyRequired="False"
+                Locked="False"
+                Layout="lAbsolute"
+                BorderStyle="bsNone"
+                BorderWidth="0"
+                BorderColor="15987957"
+                Color="clNone"
+                CanGrow="Yes"
+                CanShrink="True"
+                NavigationBar="'Buttons:Space,FirstRecord,PreviousRecord,CurrentRecord,NextRecord,LastRecord,RecordCount,Separator,Refresh,Submit,Space,NewRecord,DeleteRecord,EditRecord,Space;'"
+                BandTypeValue="btDocumentHeader">
+                <BorderSides mfk:type="set">
+                    <bsLeft />
+                    <bsTop />
+                    <bsRight />
+                    <bsBottom />
+                </BorderSides>
+                <ControlStyles mfk:type="collection">
+                    <item SProps="'Band.Default|Color,BorderColor,Effect,BorderWidth,BorderStyle'"
+                        Font.SProps="'Size'" />
+                </ControlStyles>
+            </mfk:object>
+            <mfk:object mfk:name="DocumentFooter"
+                mfk:class="Band"
+                Left="0"
+                Top="251354"
+                Width="211667"
+                Height="31750"
+                Cursor="crDefault"
+                Margins.Left="0"
+                Margins.Top="0"
+                Margins.Right="0"
+                Margins.Bottom="0"
+                ShowRuntimeStates="False"
+                OriginalOwnerID="'{0B5FBC25-C5BE-4684-A87E-A58CEAD9E8FE}'"
+                CanBeSelectedAtDesignTime="True"
+                IsDesignVisible="True"
+                NeedsMovingHandle="True"
+                ShadowCopyRequired="False"
+                Locked="False"
+                Layout="lAbsolute"
+                BorderStyle="bsNone"
+                BorderWidth="0"
+                BorderColor="15987957"
+                Color="clNone"
+                CanGrow="Yes"
+                CanShrink="True"
+                NavigationBar="'Buttons:Space,FirstRecord,PreviousRecord,CurrentRecord,NextRecord,LastRecord,RecordCount,Separator,Refresh,Submit,Space,NewRecord,DeleteRecord,EditRecord,Space;'"
+                BandTypeValue="btDocumentFooter">
+                <BorderSides mfk:type="set">
+                    <bsLeft />
+                    <bsTop />
+                    <bsRight />
+                    <bsBottom />
+                </BorderSides>
+                <ControlStyles mfk:type="collection">
+                    <item SProps="'Band.Default|Color,BorderColor,Effect,BorderWidth,BorderStyle'"
+                        Font.SProps="'Size'" />
+                </ControlStyles>
+                <mfk:object mfk:name="TextLabel2"
+                    mfk:class="TextLabel"
+                    Left="11906"
+                    Top="10319"
+                    Width="44450"
+                    Height="11112"
+                    Cursor="crDefault"
+                    Margins.Left="0"
+                    Margins.Top="0"
+                    Margins.Right="0"
+                    Margins.Bottom="0"
+                    Opacity="100"
+                    ShowRuntimeStates="False"
+                    OriginalOwnerID="'{0B5FBC25-C5BE-4684-A87E-A58CEAD9E8FE}'"
+                    CanBeSelectedAtDesignTime="True"
+                    IsDesignVisible="True"
+                    NeedsMovingHandle="False"
+                    AutoSize="False"
+                    Color="clNone"
+                    Caption="'[Footer]'"
+                    WordWrap="False"
+                    Font.Charset="DEFAULT_CHARSET"
+                    Font.Color="10921638"
+                    Font.Height="-32"
+                    Font.Name="'Arial'"
+                    Alignment="taLeftJustify"
+                    Transparent="True"
+                    BorderWidth="0"
+                    BorderStyle="bsNone"
+                    BorderColor="8688022"
+                    Padding.Left="0"
+                    Padding.Top="0"
+                    Padding.Right="0"
+                    Padding.Bottom="0"
+                    IsHyperlink="False"
+                    LetterSpacing="0">
+                    <Font.Style mfk:type="set" />
+                    <BorderSides mfk:type="set">
+                        <bsLeft />
+                        <bsTop />
+                        <bsRight />
+                        <bsBottom />
+                    </BorderSides>
+                    <ControlStyles mfk:type="collection">
+                        <item SProps="'TextLabel.Default|Effect,Color,BorderColor,Width,Height'"
+                            Font.SProps="'Name,Style'">
+                            <Font.NSProps mfk:type="list">
+                                <item>'Color'</item>
+                                <item>'#Theme#Colors.Color1.4'</item>
+                                <item>'Size'</item>
+                                <item>'24'</item>
+                            </Font.NSProps>
+                        </item>
+                    </ControlStyles>
+                </mfk:object>
+            </mfk:object>
+        </mfk:object>
+    </mfk:properties>
+    <mfk:server>
+        <![CDATA[
+        Unit frmRoot;
+
+        Interface
+
+        Type
+        frmRoot = Class(Form)
+            Subform1   : SubForm;
+            TextLabel2 : TextLabel;
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+        End;
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:server>
+    <mfk:browser>
+        <![CDATA[
+        Unit frmRoot;
+
+        Interface
+
+        Type
+        frmRoot = Class(Form)
+            Subform1   : SubForm;
+            TextLabel2 : TextLabel;
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+        End;
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:browser>
+</mfk:MorfikFile>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="General Fields" ModuleKind="Server" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="Editor Options">
+            <mfk:section mfk:name="Collapsed Lines" />
+        </mfk:section>
+    </mfk:config>
+    <mfk:server>
+        <![CDATA[
+        Unit ServiceUtil;
+
+
+        Interface
+        Uses
+           CityProvider,
+           CityServices;
+
+
+        Type
+        TCityProviderClass = Class of TCityServicesProvider;
+
+
+        Var
+        CityProviderClass : TCityProviderClass = TFBCityProvider;
+
+        Implementation
+
+
+
+        End.
+        ]]>
+    </mfk:server>
+</mfk:MorfikFile>

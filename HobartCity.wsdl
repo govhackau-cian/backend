@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions name = "HobartCity"
+             targetNamespace="http://tempuri.org/"
+             xmlns:tns="http://tempuri.org/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+    
+    <wsdl:types>
+    
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
+                    targetNamespace="http://tempuri.org/"
+                    elementFormDefault="qualified">
+            
+            <xsd:simpleType name="TDBObjectStatus">
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="dbsModified"/>
+                <xsd:enumeration value="dbsDeleted"/>
+                <xsd:enumeration value="dbsNew"/>
+                <xsd:enumeration value="dbsUnChanged"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+            
+            <xsd:simpleType name="TDBObjectUpdateStatus">
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="dusUnchanged"/>
+                <xsd:enumeration value="dusModifiedByOthers"/>
+                <xsd:enumeration value="dusDeletedByOthers"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+            
+            <xsd:element name="GettblHobartToilets">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SQLFilter" type="xsd:string" />
+                        <xsd:element name="Parameters" type="xsd:string" />
+                        <xsd:element name="StartingOffset" type="xsd:int" />
+                        <xsd:element name="PageSize" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GettblHobartToiletsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DataPage" type="tns:_tblHobartToiletsRecordList" />
+                        <xsd:element name="RecordCount" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GettblKingbroughToilets">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SQLFilter" type="xsd:string" />
+                        <xsd:element name="Parameters" type="xsd:string" />
+                        <xsd:element name="StartingOffset" type="xsd:int" />
+                        <xsd:element name="PageSize" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GettblKingbroughToiletsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DataPage" type="tns:_tblKingbroughToiletsRecordList" />
+                        <xsd:element name="RecordCount" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GettblOPenPark">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SQLFilter" type="xsd:string" />
+                        <xsd:element name="Parameters" type="xsd:string" />
+                        <xsd:element name="StartingOffset" type="xsd:int" />
+                        <xsd:element name="PageSize" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GettblOPenParkResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DataPage" type="tns:_tblOPenParkRecordList" />
+                        <xsd:element name="RecordCount" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GettblPlayGround">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SQLFilter" type="xsd:string" />
+                        <xsd:element name="Parameters" type="xsd:string" />
+                        <xsd:element name="StartingOffset" type="xsd:int" />
+                        <xsd:element name="PageSize" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GettblPlayGroundResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DataPage" type="tns:_tblPlayGroundRecordList" />
+                        <xsd:element name="RecordCount" type="xsd:int" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GetToilets">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="GetToiletsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="jsonstring" type="xsd:string" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="ParksGrounds">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="ParksGroundsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="jsonstring" type="xsd:string" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="PlayGrounds">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="PlayGroundsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="jsonstring" type="xsd:string" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="UpdatetblHobartToilets">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DataPage" type="tns:_tblHobartToiletsRecordList" />
+                        <xsd:element name="ForceSubmit" type="xsd:boolean" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="UpdatetblHobartToiletsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="UpdatetblKingbroughToilets">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DataPage" type="tns:_tblKingbroughToiletsRecordList" />
+                        <xsd:element name="ForceSubmit" type="xsd:boolean" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="UpdatetblKingbroughToiletsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="UpdatetblOPenPark">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DataPage" type="tns:_tblOPenParkRecordList" />
+                        <xsd:element name="ForceSubmit" type="xsd:boolean" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="UpdatetblOPenParkResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="UpdatetblPlayGround">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DataPage" type="tns:_tblPlayGroundRecordList" />
+                        <xsd:element name="ForceSubmit" type="xsd:boolean" />
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:element name="UpdatetblPlayGroundResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            
+            <xsd:complexType name="tblHobartToiletsRecord">
+                <complexContent>
+                    <extension base="tns:TDBRecord">
+                        <xsd:sequence>
+                            <xsd:element name="MFK_GUID" type="xsd:string" default="{autogen}"/>
+                            <xsd:element name="MFK_CTS" type="xsd:dateTime" default=""/>
+                            <xsd:element name="MFK_LMTS" type="xsd:dateTime" default=""/>
+                            <xsd:element name="OBEJECTID" type="xsd:string" default=""/>
+                            <xsd:element name="DESCRPT" type="xsd:string" default=""/>
+                            <xsd:element name="AREALOC" type="xsd:string" default=""/>
+                            <xsd:element name="LAT" type="xsd:string" default=""/>
+                            <xsd:element name="LONG" type="xsd:string" default=""/>
+                            <xsd:element name="TYPEOF" type="xsd:string" default=""/>
+                        </xsd:sequence>
+                    </extension>
+                </complexContent>
+            </xsd:complexType>
+            
+            <xsd:complexType name="tblKingbroughToiletsRecord">
+                <complexContent>
+                    <extension base="tns:TDBRecord">
+                        <xsd:sequence>
+                            <xsd:element name="MFK_GUID" type="xsd:string" default="{autogen}"/>
+                            <xsd:element name="MFK_CTS" type="xsd:dateTime" default=""/>
+                            <xsd:element name="MFK_LMTS" type="xsd:dateTime" default=""/>
+                            <xsd:element name="Lat" type="xsd:string" default=""/>
+                            <xsd:element name="Long" type="xsd:string" default=""/>
+                            <xsd:element name="TYPEOF" type="xsd:string" default=""/>
+                            <xsd:element name="AddressLoc" type="xsd:string" default=""/>
+                        </xsd:sequence>
+                    </extension>
+                </complexContent>
+            </xsd:complexType>
+            
+            <xsd:complexType name="tblOPenParkRecord">
+                <complexContent>
+                    <extension base="tns:TDBRecord">
+                        <xsd:sequence>
+                            <xsd:element name="MFK_GUID" type="xsd:string" default="{autogen}"/>
+                            <xsd:element name="MFK_CTS" type="xsd:dateTime" default=""/>
+                            <xsd:element name="MFK_LMTS" type="xsd:dateTime" default=""/>
+                            <xsd:element name="OBEJECTID" type="xsd:string" default=""/>
+                            <xsd:element name="DESCRPT" type="xsd:string" default=""/>
+                            <xsd:element name="LAT" type="xsd:string" default=""/>
+                            <xsd:element name="LONG" type="xsd:string" default=""/>
+                        </xsd:sequence>
+                    </extension>
+                </complexContent>
+            </xsd:complexType>
+            
+            <xsd:complexType name="tblPlayGroundRecord">
+                <complexContent>
+                    <extension base="tns:TDBRecord">
+                        <xsd:sequence>
+                            <xsd:element name="MFK_GUID" type="xsd:string" default="{autogen}"/>
+                            <xsd:element name="MFK_CTS" type="xsd:dateTime" default=""/>
+                            <xsd:element name="MFK_LMTS" type="xsd:dateTime" default=""/>
+                            <xsd:element name="OBJECTID" type="xsd:string" default=""/>
+                            <xsd:element name="Type_Descr" type="xsd:string" default=""/>
+                            <xsd:element name="Park_Name" type="xsd:string" default=""/>
+                            <xsd:element name="Rubbish_bi" type="xsd:string" default=""/>
+                            <xsd:element name="Website" type="xsd:string" default=""/>
+                            <xsd:element name="ORIG_FID" type="xsd:int" default="0"/>
+                            <xsd:element name="FACILITYID" type="xsd:int" default="0"/>
+                            <xsd:element name="NAMEPark" type="xsd:string" default=""/>
+                            <xsd:element name="FULLADDR" type="xsd:string" default=""/>
+                            <xsd:element name="OPERHOURS" type="xsd:string" default=""/>
+                            <xsd:element name="OPERDAYS" type="xsd:string" default=""/>
+                            <xsd:element name="PARKURL" type="xsd:string" default=""/>
+                            <xsd:element name="PhotoURL" type="xsd:string" default=""/>
+                            <xsd:element name="Toilets" type="xsd:string" default=""/>
+                            <xsd:element name="Universal_" type="xsd:string" default=""/>
+                            <xsd:element name="Shelter" type="xsd:string" default=""/>
+                            <xsd:element name="Barbecues" type="xsd:string" default=""/>
+                            <xsd:element name="picnic_tab" type="xsd:string" default=""/>
+                            <xsd:element name="Seating" type="xsd:string" default=""/>
+                            <xsd:element name="Drinking_f" type="xsd:string" default=""/>
+                            <xsd:element name="Play_equip" type="xsd:string" default=""/>
+                            <xsd:element name="Recreation" type="xsd:string" default=""/>
+                            <xsd:element name="Walking_tr" type="xsd:string" default=""/>
+                            <xsd:element name="Dogs_NOT_p" type="xsd:string" default=""/>
+                            <xsd:element name="Dogs_on_le" type="xsd:string" default=""/>
+                            <xsd:element name="Dogs_off_l" type="xsd:string" default=""/>
+                            <xsd:element name="Shade_tree" type="xsd:string" default=""/>
+                            <xsd:element name="Historic_S" type="xsd:string" default=""/>
+                            <xsd:element name="Suitable_f" type="xsd:string" default=""/>
+                            <xsd:element name="Lat" type="xsd:string" default=""/>
+                            <xsd:element name="Long" type="xsd:string" default=""/>
+                            <xsd:element name="FID" type="xsd:string" default=""/>
+                        </xsd:sequence>
+                    </extension>
+                </complexContent>
+            </xsd:complexType>
+            
+            <xsd:complexType name="TDBObject">
+                <xsd:sequence>
+                    <xsd:element name="Status" type="tns:TDBObjectStatus"/>
+                    <xsd:element name="UpdateStatus" type="tns:TDBObjectUpdateStatus"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="TDBRecord">
+                <complexContent>
+                    <extension base="tns:TDBObject">
+                        <xsd:sequence>
+                        </xsd:sequence>
+                    </extension>
+                </complexContent>
+            </xsd:complexType>
+            
+            <xsd:complexType name="_tblHobartToiletsRecordList">
+                <xsd:complexContent>
+                    <xsd:restriction base="soapenc:Array">
+                        <xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:tblHobartToiletsRecord[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            
+            <xsd:complexType name="_tblKingbroughToiletsRecordList">
+                <xsd:complexContent>
+                    <xsd:restriction base="soapenc:Array">
+                        <xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:tblKingbroughToiletsRecord[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            
+            <xsd:complexType name="_tblOPenParkRecordList">
+                <xsd:complexContent>
+                    <xsd:restriction base="soapenc:Array">
+                        <xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:tblOPenParkRecord[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            
+            <xsd:complexType name="_tblPlayGroundRecordList">
+                <xsd:complexContent>
+                    <xsd:restriction base="soapenc:Array">
+                        <xsd:attribute ref="soapenc:arrayType" wsdl:arrayType="tns:tblPlayGroundRecord[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            
+        </xsd:schema>
+        
+    </wsdl:types>
+    
+    <!-- Header Message -->
+    
+    <!-- Method Messages -->
+    <message name="GettblHobartToilets">
+        <part name = "parameters" element="tns:GettblHobartToilets"/>
+    </message>
+    <message name="GettblHobartToiletsResponse">
+        <part name = "parameters" element="tns:GettblHobartToiletsResponse"/>
+    </message>
+    
+    <message name="GettblKingbroughToilets">
+        <part name = "parameters" element="tns:GettblKingbroughToilets"/>
+    </message>
+    <message name="GettblKingbroughToiletsResponse">
+        <part name = "parameters" element="tns:GettblKingbroughToiletsResponse"/>
+    </message>
+    
+    <message name="GettblOPenPark">
+        <part name = "parameters" element="tns:GettblOPenPark"/>
+    </message>
+    <message name="GettblOPenParkResponse">
+        <part name = "parameters" element="tns:GettblOPenParkResponse"/>
+    </message>
+    
+    <message name="GettblPlayGround">
+        <part name = "parameters" element="tns:GettblPlayGround"/>
+    </message>
+    <message name="GettblPlayGroundResponse">
+        <part name = "parameters" element="tns:GettblPlayGroundResponse"/>
+    </message>
+    
+    <message name="GetToilets">
+        <part name = "parameters" element="tns:GetToilets"/>
+    </message>
+    <message name="GetToiletsResponse">
+        <part name = "parameters" element="tns:GetToiletsResponse"/>
+    </message>
+    
+    <message name="ParksGrounds">
+        <part name = "parameters" element="tns:ParksGrounds"/>
+    </message>
+    <message name="ParksGroundsResponse">
+        <part name = "parameters" element="tns:ParksGroundsResponse"/>
+    </message>
+    
+    <message name="PlayGrounds">
+        <part name = "parameters" element="tns:PlayGrounds"/>
+    </message>
+    <message name="PlayGroundsResponse">
+        <part name = "parameters" element="tns:PlayGroundsResponse"/>
+    </message>
+    
+    <message name="UpdatetblHobartToilets">
+        <part name = "parameters" element="tns:UpdatetblHobartToilets"/>
+    </message>
+    <message name="UpdatetblHobartToiletsResponse">
+        <part name = "parameters" element="tns:UpdatetblHobartToiletsResponse"/>
+    </message>
+    
+    <message name="UpdatetblKingbroughToilets">
+        <part name = "parameters" element="tns:UpdatetblKingbroughToilets"/>
+    </message>
+    <message name="UpdatetblKingbroughToiletsResponse">
+        <part name = "parameters" element="tns:UpdatetblKingbroughToiletsResponse"/>
+    </message>
+    
+    <message name="UpdatetblOPenPark">
+        <part name = "parameters" element="tns:UpdatetblOPenPark"/>
+    </message>
+    <message name="UpdatetblOPenParkResponse">
+        <part name = "parameters" element="tns:UpdatetblOPenParkResponse"/>
+    </message>
+    
+    <message name="UpdatetblPlayGround">
+        <part name = "parameters" element="tns:UpdatetblPlayGround"/>
+    </message>
+    <message name="UpdatetblPlayGroundResponse">
+        <part name = "parameters" element="tns:UpdatetblPlayGroundResponse"/>
+    </message>
+    
+    
+    <portType name="HobartCityPort">
+    
+        <operation name="GettblHobartToilets">
+            <input message="tns:GettblHobartToilets"/>
+            <output message="tns:GettblHobartToiletsResponse"/>
+        </operation>
+        
+        <operation name="GettblKingbroughToilets">
+            <input message="tns:GettblKingbroughToilets"/>
+            <output message="tns:GettblKingbroughToiletsResponse"/>
+        </operation>
+        
+        <operation name="GettblOPenPark">
+            <input message="tns:GettblOPenPark"/>
+            <output message="tns:GettblOPenParkResponse"/>
+        </operation>
+        
+        <operation name="GettblPlayGround">
+            <input message="tns:GettblPlayGround"/>
+            <output message="tns:GettblPlayGroundResponse"/>
+        </operation>
+        
+        <operation name="GetToilets">
+            <input message="tns:GetToilets"/>
+            <output message="tns:GetToiletsResponse"/>
+        </operation>
+        
+        <operation name="ParksGrounds">
+            <input message="tns:ParksGrounds"/>
+            <output message="tns:ParksGroundsResponse"/>
+        </operation>
+        
+        <operation name="PlayGrounds">
+            <input message="tns:PlayGrounds"/>
+            <output message="tns:PlayGroundsResponse"/>
+        </operation>
+        
+        <operation name="UpdatetblHobartToilets">
+            <input message="tns:UpdatetblHobartToilets"/>
+            <output message="tns:UpdatetblHobartToiletsResponse"/>
+        </operation>
+        
+        <operation name="UpdatetblKingbroughToilets">
+            <input message="tns:UpdatetblKingbroughToilets"/>
+            <output message="tns:UpdatetblKingbroughToiletsResponse"/>
+        </operation>
+        
+        <operation name="UpdatetblOPenPark">
+            <input message="tns:UpdatetblOPenPark"/>
+            <output message="tns:UpdatetblOPenParkResponse"/>
+        </operation>
+        
+        <operation name="UpdatetblPlayGround">
+            <input message="tns:UpdatetblPlayGround"/>
+            <output message="tns:UpdatetblPlayGroundResponse"/>
+        </operation>
+        
+    </portType>
+    
+    <binding name="HobartCityBinding" type="tns:HobartCityPort">
+    
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+        
+        <operation name="GettblHobartToilets">
+            <soap:operation soapAction="GettblHobartToilets"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="GettblKingbroughToilets">
+            <soap:operation soapAction="GettblKingbroughToilets"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="GettblOPenPark">
+            <soap:operation soapAction="GettblOPenPark"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="GettblPlayGround">
+            <soap:operation soapAction="GettblPlayGround"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="GetToilets">
+            <soap:operation soapAction="GetToilets"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="ParksGrounds">
+            <soap:operation soapAction="ParksGrounds"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="PlayGrounds">
+            <soap:operation soapAction="PlayGrounds"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="UpdatetblHobartToilets">
+            <soap:operation soapAction="UpdatetblHobartToilets"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="UpdatetblKingbroughToilets">
+            <soap:operation soapAction="UpdatetblKingbroughToilets"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="UpdatetblOPenPark">
+            <soap:operation soapAction="UpdatetblOPenPark"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+        <operation name="UpdatetblPlayGround">
+            <soap:operation soapAction="UpdatetblPlayGround"/>
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+        
+    </binding>
+    
+    <service name="HobartCityService">
+        <port name="HobartCityPort" binding="tns:HobartCityBinding">
+            <soap:address location="http://localhost:9119/?cls=soap"/>
+        </port>
+    </service>
+    
+</definitions>

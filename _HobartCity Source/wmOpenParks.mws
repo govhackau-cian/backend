@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="FastLookup" RemoteHost="" WebMethod="" />
+        <mfk:section mfk:name="GridOptions"
+            GridCol0="18"
+            GridCol1="120"
+            GridCol2="120"
+            GridCol3="120"
+            GridCol4="80"
+            GridCol5="1028" />
+        <mfk:section mfk:name="WebMethods" WSParameterCount="0" />
+        <mfk:section mfk:name="General Fields" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="GridOptions"
+            GridCol0="18"
+            GridCol1="120"
+            GridCol2="120"
+            GridCol3="120"
+            GridCol4="80"
+            GridCol5="1028" />
+        <mfk:section mfk:name="WebMethods" WSParameterCount="0" />
+        <mfk:section mfk:name="Editor Options">
+            <mfk:section mfk:name="Collapsed Lines" />
+        </mfk:section>
+    </mfk:config>
+    <mfk:properties>
+        <mfk:object mfk:name="wmOpenParks" mfk:class="TwmOpenParks" />
+    </mfk:properties>
+    <mfk:server>
+        <![CDATA[
+        Unit wmOpenParks;
+
+        Interface
+        Uses
+           SystemJSON,
+           SystemClasses,
+           SystemDatabase,
+           SystemGraphics,
+           SystemServer,
+           SystemCatalog,
+           SystemUtilities,
+           SystemConnectorsDB,
+           SystemConnectors;
+
+        Type
+        wmOpenParks = Class(WebMethod)
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+            Procedure Execute; override;
+            Procedure updateToilets(
+                                     AOBJECTID : String;
+                                     ADESCRPT  : String;
+                                     ALat      : String;
+                                     ALong     : String
+                                      );
+            Procedure DeletTableCSV;
+
+        End;
+
+        Implementation
+
+        {..............................................................................}
+        Procedure wmOpenParks.updateToilets(
+                                               AOBJECTID : String;
+                                               ADESCRPT  : String;
+                                               ALat      : String;
+                                               ALong     : String
+                                           );
+
+                Function GetFieldNamesAccount(IsParam : Boolean) : String;
+                Procedure AddField(FN : String);
+                Begin
+                    If Not Result.IsEmpty Then
+                       Result := Result + ',';
+
+                    If IsParam Then Result := Result + ':' + FN
+                               Else Result := Result +       '"' + FN + '"';
+                End;
+            Begin
+               Result := '';
+               AddField('OBEJECTID');
+               AddField('DESCRPT');
+               AddField('LAT');
+               AddField('LONG');
+            End;
+        Var
+            SQL     : String;
+            Command : TAnyDbRecordset;
+            MainHostTable : String;
+
+        Begin
+
+             MainHostTable := 'tblOPenPark';
+
+             SQL := 'INSERT INTO "' + MainHostTable + '" (' + GetFieldNamesAccount(False) + ') VALUES (' + GetFieldNamesAccount( TRUE ) + ')';
+
+             Command := DefaultDBConnection.CreateDBRecordset(SQL);
+             Try
+                 Command.Prepare;
+                 Command.ParamByName('OBEJECTID').AsString := AOBJECTID;
+                 Command.ParamByName('DESCRPT').AsString   := ADESCRPT;
+                 Command.ParamByName('LAT').AsString       := ALAT;
+                 Command.ParamByName('LONG').AsString      := ALONG;
+
+                 Command.Execute;
+                 Command.Active := False;
+              Finally
+                 Command.free;
+              End;
+        End;
+        {..............................................................................}
+
+        {..............................................................................}
+        Procedure wmOpenParks.DeletTableCSV;
+        Var
+            SQLCommand : TSQLCommand;
+        Begin
+            Try
+                SQLCommand := DefaultDBConnection.CreateSQLCommand('DELETE FROM "tblOPenPark"');
+                Try
+                    SQLCommand.Prepare;
+                    SQLCommand.Execute;
+                Finally
+                    DefaultDBConnection.DestroySQLCommand(SQLCommand);
+                End;
+            Except
+            End;
+
+        End;
+        {..............................................................................}
+
+
+        Procedure wmOpenParks.Execute;
+        Var
+            TempList    : TStringList;
+            RspJSONStr  : AnsiString;
+            LData       : TJSONObject;
+
+            ParkName : String;
+            i : Integer;
+            S : String;
+        Begin
+            DeletTableCSV;
+            TempList := TStringList.Create;
+            TempList.LoadFromFile(ExtractFiledir(ParamStr(0)) + '\Open_Space_Parks.geojson');
+
+            ShowMessage( TempList.text);
+
+            Try
+                 LData := TJSONObject( JSON.Parse(TempList.text) );
+
+                 For  i:= 0 To  LData.Field['features'].Count - 1 DO
+                 Begin
+                     SHowMessage( LData.Field['features'].child[i].Field['geometry'].Field['type'].Field['Type'].value);
+
+                    If   LData.Field['features'].child[i].Field['geometry'].Field['type'].Field['Type'].value = 'MultiPolygon' Then
+                    Begin
+                       //SHowMessage( LData.Field['features'].child[i].Field['geometry'].Field['coordinates'].Field['Type'].value);
+                       updateToilets(
+                                 LData.Field['features'].child[i].Field['properties'].Field['OBJECTID'].value,
+                                 LData.Field['features'].child[i].Field['properties'].Field['Park_Name'].value,
+                                 LData.Field['features'].child[i].Field['geometry'].Field['coordinates'].Child[0].Child[0].Child[0].Child[0].value,
+                                 LData.Field['features'].child[i].Field['geometry'].Field['coordinates'].Child[0].Child[0].Child[0].Child[1].value
+                             );
+          
+                    End
+                    Else
+                     updateToilets(
+                                   LData.Field['features'].child[i].Field['properties'].Field['OBJECTID'].value,
+                                   LData.Field['features'].child[i].Field['properties'].Field['Park_Name'].value,
+                                   LData.Field['features'].child[i].Field['geometry'].Field['coordinates'].Child[0].Child[0].Child[0].value,
+                                   LData.Field['features'].child[i].Field['geometry'].Field['coordinates'].Child[0].Child[0].Child[1].value
+
+                                  );
+                 End;
+
+            Finally
+
+
+            End;
+
+
+
+        End;
+
+        End.
+        ]]>
+    </mfk:server>
+    <mfk:browser>
+        <![CDATA[
+        Unit wmOpenParks;
+
+        Interface
+
+        Type
+        wmOpenParks = Class(WebMethod)
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+            Procedure HandleResponse; override;
+        End;
+
+        Implementation
+
+        Procedure wmOpenParks.HandleResponse;
+        Begin
+
+        End;
+
+        End.
+        ]]>
+    </mfk:browser>
+</mfk:MorfikFile>

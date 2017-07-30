@@ -1,0 +1,65 @@
+﻿OBJECTID,IFC,TYPE_,AREA,DESC_,BUSINESSID,X,Y
+1,1247904,Public Toilet,Domain,Tattersalls Hobart Aquatic Centre,BS0001,527138.811105,5252851.987203
+2,1247905,Public Toilet,Domain,Regatta Grounds,BS0034,527424.16464,5252878.647466
+4,1247901,Public Toilet,Domain,Cross Roads Oval,BS0007,526444.729102,5253935.16428
+5,1247900,Public Toilet,Domain,Domain Athletics Centre,BS0002,526497.359926,5253799.416234
+6,1247893,Public Toilet,Domain,Tennis Centre Car Park,BP0009,526901.261206,5253239.077437
+7,1247891,Public Toilet,West Hobart,John Doggett,BP0014,525553.962105,5252777.349095
+8,1247889,Public Toilet,West Hobart,Caldew Park,BP0003,525535.861342,5252234.304672
+9,1247887,Public Toilet,West Hobart,West Hobart Oval - Female,BP0046,525184.479726,5252450.164521
+10,1247886,Public Toilet,West Hobart,West Hobart Oval - Male,BP0045,525200.459021,5252440.483536
+11,1247884,Public Toilet,West Hobart,Friends Park,BP0020,525159.840739,5252807.207641
+13,1247865,Public Toilet,Salamanca,St Davids Park - Unisex,BP0039,526891.518795,5251655.435395
+14,1247697,Public Toilet,Lower Sandy Bay,Nut Grove Beach,BP0032,528682.306127,5249227.278293
+15,1247696,Public Toilet,Lower Sandy Bay,Prossers Restaurant,BR0005,529142.876817,5249129.434858
+16,1247695,Public Toilet,Lower Sandy Bay,Long Point Road,BP0018,529050.982184,5249072.50812
+17,1247694,Public Toilet,Lower Sandy Bay,Life Saving Pavillion,BR0004,529160.83128,5248686.930418
+18,1247756,Public Toilet,Salamanca,Salamanca Alcove,NULL,527251.670502,5251668.019059
+19,1247747,Public Toilet,Battery Point,Princes Park,BP0034,527547.105721,5251645.873814
+20,1247746,Public Toilet,Battery Point,Marieville Esplanade,BP0019,527210.412857,5250700.122695
+21,1247741,Public Toilet,Sandy Bay,Queenborough Oval - Female,BP0035,527119.758637,5249667.956924
+22,1247740,Public Toilet,Sandy Bay,Queenborough Oval - Male (Peel Street),BS0028,527142.427196,5249686.040611
+24,1247732,Public Toilet,Sandy Bay,Queenborough Oval - Rear,BS0029,527145.921235,5249873.542839
+25,1247729,Public Toilet,Sandy Bay,Queenborough Oval - Front,BS0029,527161.426777,5249879.57903
+27,1248238,Public Toilet,Mount Nelson,Mount Nelson Oval,BP0022,526825.99334,5247526.860064
+28,1248246,Public Toilet,Lenah Valley,Lady Franklin,BP0016,522689.363487,5254028.711738
+29,1248261,Public Toilet,Lenah Valley,John Turnbull Park,BS0008,523582.84157,5254547.969416
+30,1248264,Public Toilet,Lenah Valley,John Turnbull Park,BH0002,523589.724409,5254523.728889
+31,1247950,Public Toilet,Cornelian Bay,Cornelian Bay Foreshore,BP0007,526070.260909,5255234.547853
+32,1247970,Public Toilet,Cornelian Bay,Queens Walk,BS0009,525469.430294,5255657.775911
+33,1247994,Public Toilet,New Town,New Town Oval - Male,BP0026,524455.398866,5255409.27948
+34,1247995,Public Toilet,New Town,New Town Oval - Female,BP0025,524455.444489,5255433.842993
+35,1248001,Public Toilet,New Town,New Town Oval - Main,BP0027,524279.09757,5255459.43599
+36,1248110,Public Toilet,North Hobart,Burnett Street,BP0002,525831.391179,5253053.888908
+37,1248122,Public Toilet,North Hobart,Cultural Park,BP0005,525883.46298,5252780.405979
+38,1248123,Public Toilet,North Hobart,Soundy Park,BP0047,526076.633177,5253295.0816
+39,1248125,Public Toilet,North Hobart,Swan Street,BP0040,525656.578529,5253302.540615
+40,1248127,Public Toilet,City Centre,Franklin Square,BP0011,527007.642792,5252105.728316
+41,1248143,Public Toilet,South Hobart,Cascade Gardens,BP0004,524144.963028,5250798.777374
+42,1248144,Public Toilet,South Hobart,Fitzroy Gardens,BP0010,526103.840879,5250941.279962
+43,1248145,Public Toilet,South Hobart,Parliament Street Oval,BP0033,526197.459465,5250719.027268
+44,1248160,Public Toilet,South Hobart,South Hobart Oval,BP0048,525177.278408,5250694.257254
+45,1248161,Public Toilet,South Hobart,Washington Street,BP0041,525205.713093,5250768.317397
+46,1248225,Public Toilet,South Hobart,Wellesley Park,BS0040,524426.041226,5250404.66439
+47,1248232,Public Toilet,South Hobart,Waterworks Reserve - Block 1,BP0044,523787.878333,5249292.622235
+48,1248233,Public Toilet,South Hobart,Waterworks Reserve - Block 2,BP0043,523525.43552,5249155.935149
+50,1248129,Public Toilet,City Centre,Argyle Street,BC0001,526872.069008,5252363.747973
+51,1248134,Public Toilet,City Centre,Harrington Street,BP0012,526487.689122,5251986.19851
+52,1248135,Public Toilet,City Centre,Centrepoint,BC0002,526597.679945,5252083.434058
+54,1248139,Public Toilet,City Centre,Hobart Central Car Park,BC0003,526465.543048,5252311.603737
+55,1248373,Public Toilet,Mount Wellington,Ferntree,BP0013,521170.383815,5247781.305794
+56,1248378,Public Toilet,Domain,TCA - (Northern End),BS0056,526812.658978,5253516.948899
+57,1248379,Public Toilet,Domain,TCA - (Ladies),BS0054,526906.339065,5253387.96273
+58,1248380,Public Toilet,North Hobart,North Hobart Oval,BP0029,525710.996939,5253813.762663
+59,1248381,Public Toilet,North Hobart,North Hobart Oval,BP0028,525752.899355,5253724.303823
+60,1248382,Public Toilet,North Hobart,North Hobart Oval,BS0016,525791.490567,5253730.96381
+61,1248383,Public Toilet,North Hobart,North Hobart Oval,BP0031,525905.673701,5253791.002951
+62,1248384,Public Toilet,North Hobart,North Hobart Oval,BP0030,525898.988001,5253866.968779
+63,1248385,Public Toilet,North Hobart,North Hobart Oval,BS0022,525869.048924,5253895.208448
+64,1248404,Public Toilet,Mount Wellington,Springs,BP0024,520282.267624,5248570.830385
+65,1248405,Public Toilet,Mount Wellington,Pinnacle,BP0023,519370.590457,5250773.653094
+66,1248440,Public Toilet,Salamanca,Salamanca Square,BP0049,527116.04142,5251661.338821
+67,1248483,Public Toilet,New Town,Clare Street Oval,BP0006,524860.945695,5254222.24565
+69,1248529,Public Toilet,South Hobart,South Hobart Oval,BP0042,525200.663346,5250671.712158
+70,1248571,Public Toilet,New Town,New Town Oval,BS0011,524301.756597,5255492.811163
+71,,Public Toilet,Hobart CBD,Unisex - Disabled access,,,

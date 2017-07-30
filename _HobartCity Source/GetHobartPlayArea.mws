@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="FastLookup" RemoteHost="" WebMethod="" />
+        <mfk:section mfk:name="GridOptions"
+            GridCol0="18"
+            GridCol1="120"
+            GridCol2="120"
+            GridCol3="120"
+            GridCol4="80"
+            GridCol5="1028" />
+        <mfk:section mfk:name="WebMethodParam0"
+            Name="Lat"
+            DataType="String"
+            DefaultValue=""
+            InOut="Out"
+            Description=""
+            DisplayValue=""
+            DefaultValueSet="0"
+            ParamKind="1" />
+        <mfk:section mfk:name="WebMethodParam1"
+            Name="Long"
+            DataType="String"
+            DefaultValue=""
+            InOut="Out"
+            Description=""
+            DisplayValue=""
+            DefaultValueSet="0"
+            ParamKind="1" />
+        <mfk:section mfk:name="WebMethodParam2"
+            Name="cmd"
+            DataType="String"
+            DefaultValue=""
+            InOut="In"
+            Description=""
+            DisplayValue=""
+            DefaultValueSet="0"
+            ParamKind="1" />
+        <mfk:section mfk:name="WebMethods" WSParameterCount="3" />
+        <mfk:section mfk:name="General Fields" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="Editor Options">
+            <mfk:section mfk:name="Collapsed Lines" />
+        </mfk:section>
+        <mfk:section mfk:name="GridOptions"
+            GridCol0="18"
+            GridCol1="120"
+            GridCol2="120"
+            GridCol3="120"
+            GridCol4="80"
+            GridCol5="1028" />
+        <mfk:section mfk:name="WebMethodParam0"
+            Name="Lat"
+            DataType="String"
+            DefaultValue=""
+            InOut="Out"
+            Description=""
+            DisplayValue=""
+            DefaultValueSet="0"
+            ParamKind="1" />
+        <mfk:section mfk:name="WebMethodParam1"
+            Name="Long"
+            DataType="String"
+            DefaultValue=""
+            InOut="Out"
+            Description=""
+            DisplayValue=""
+            DefaultValueSet="0"
+            ParamKind="1" />
+        <mfk:section mfk:name="WebMethodParam2"
+            Name="cmd"
+            DataType="String"
+            DefaultValue=""
+            InOut="In"
+            Description=""
+            DisplayValue=""
+            DefaultValueSet="0"
+            ParamKind="1" />
+        <mfk:section mfk:name="WebMethods" WSParameterCount="3" />
+    </mfk:config>
+    <mfk:properties>
+        <mfk:object mfk:name="GetHobartPlayArea" mfk:class="TGetHobartPlayArea" />
+    </mfk:properties>
+    <mfk:server>
+        <![CDATA[
+        Unit GetHobartPlayArea;
+
+        Interface
+
+        Type
+
+
+        GetHobartPlayArea = Class(WebMethod)
+            Lat  : String;
+            Long : String;
+            cmd  : String;
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+            Procedure Execute; override;
+        End;
+
+        Implementation
+
+        Procedure GetHobartPlayArea.Execute;
+        Var
+            Recordset   : TAnyDbRecordset;
+            SQL         : String;
+            MainHostTable : String;
+        Begin
+
+            MainHostTable := 'tblPlayGround';
+
+            SQL :=  'SELECT "Lat","Long" FROM "' + MainHostTable + '"';
+
+            Recordset := HTTPServer.DefaultDBConnection.CreateDBRecordset( SQL );
+            Try
+                Recordset.Prepare;
+                Recordset.Active := True;
+                Recordset.First;
+
+              //  While Not RecordSet.Eof Do
+               // Begin
+
+                    Lat   :=  RecordSet.FieldByName('Lat' ).AsString;
+                    Long  :=  RecordSet.FieldByName('Long'      ).AsString;
+
+               //     RecordSet.next;
+              //  End;
+
+            Finally
+                Recordset.Free;
+            End;
+
+
+        End;
+
+        End.
+        ]]>
+    </mfk:server>
+    <mfk:browser>
+        <![CDATA[
+        Unit GetHobartPlayArea;
+
+        Interface
+
+        Type
+        GetHobartPlayArea = Class(WebMethod)
+            Lat  : String;
+            Long : String;
+            cmd  : String;
+          Private
+            { Private declarations }
+          Public
+            { Public declarations }
+            Procedure HandleResponse; override;
+        End;
+
+        Implementation
+
+        Procedure GetHobartPlayArea.HandleResponse;
+        Begin
+
+        End;
+
+        End.
+        ]]>
+    </mfk:browser>
+</mfk:MorfikFile>

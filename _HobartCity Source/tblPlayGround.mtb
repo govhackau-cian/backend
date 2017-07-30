@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="WebParameters" ParameterCount="0" />
+        <mfk:section mfk:name="SQL Port And Field Names"
+            Count="71"
+            Line0="MFK$GUID=MFK$GUID"
+            Line1="_MorfikType_MFK$GUID=String"
+            Line2="_UIDFieldName_=MFK$GUID"
+            Line3="MFK$CTS=MFK$CTS"
+            Line4="_MorfikType_MFK$CTS=TDateTime"
+            Line5="MFK$LMTS=MFK$LMTS"
+            Line6="_MorfikType_MFK$LMTS=TDateTime"
+            Line7="OBJECTID=OBJECTID"
+            Line8="_MorfikType_OBJECTID=String"
+            Line9="Type_Descr=Type_Descr"
+            Line10="_MorfikType_Type_Descr=String"
+            Line11="Park_Name=Park_Name"
+            Line12="_MorfikType_Park_Name=String"
+            Line13="Rubbish_bi=Rubbish_bi"
+            Line14="_MorfikType_Rubbish_bi=String"
+            Line15="Website=Website"
+            Line16="_MorfikType_Website=String"
+            Line17="ORIG_FID=ORIG_FID"
+            Line18="_MorfikType_ORIG_FID=Integer"
+            Line19="FACILITYID=FACILITYID"
+            Line20="_MorfikType_FACILITYID=Integer"
+            Line21="NAMEPark=NAMEPark"
+            Line22="_MorfikType_NAMEPark=String"
+            Line23="FULLADDR=FULLADDR"
+            Line24="_MorfikType_FULLADDR=String"
+            Line25="OPERHOURS=OPERHOURS"
+            Line26="_MorfikType_OPERHOURS=String"
+            Line27="OPERDAYS=OPERDAYS"
+            Line28="_MorfikType_OPERDAYS=String"
+            Line29="PARKURL=PARKURL"
+            Line30="_MorfikType_PARKURL=String"
+            Line31="PhotoURL=PhotoURL"
+            Line32="_MorfikType_PhotoURL=String"
+            Line33="Toilets=Toilets"
+            Line34="_MorfikType_Toilets=String"
+            Line35="Universal_=Universal_"
+            Line36="_MorfikType_Universal_=String"
+            Line37="Shelter=Shelter"
+            Line38="_MorfikType_Shelter=String"
+            Line39="Barbecues=Barbecues"
+            Line40="_MorfikType_Barbecues=String"
+            Line41="picnic_tab=picnic_tab"
+            Line42="_MorfikType_picnic_tab=String"
+            Line43="Seating=Seating"
+            Line44="_MorfikType_Seating=String"
+            Line45="Drinking_f=Drinking_f"
+            Line46="_MorfikType_Drinking_f=String"
+            Line47="Play_equip=Play_equip"
+            Line48="_MorfikType_Play_equip=String"
+            Line49="Recreation=Recreation"
+            Line50="_MorfikType_Recreation=String"
+            Line51="Walking_tr=Walking_tr"
+            Line52="_MorfikType_Walking_tr=String"
+            Line53="Dogs_NOT_p=Dogs_NOT_p"
+            Line54="_MorfikType_Dogs_NOT_p=String"
+            Line55="Dogs_on_le=Dogs_on_le"
+            Line56="_MorfikType_Dogs_on_le=String"
+            Line57="Dogs_off_l=Dogs_off_l"
+            Line58="_MorfikType_Dogs_off_l=String"
+            Line59="Shade_tree=Shade_tree"
+            Line60="_MorfikType_Shade_tree=String"
+            Line61="Historic_S=Historic_S"
+            Line62="_MorfikType_Historic_S=String"
+            Line63="Suitable_f=Suitable_f"
+            Line64="_MorfikType_Suitable_f=String"
+            Line65="Lat=Lat"
+            Line66="_MorfikType_Lat=String"
+            Line67="Long=Long"
+            Line68="_MorfikType_Long=String"
+            Line69="FID=FID"
+            Line70="_MorfikType_FID=String" />
+        <mfk:section mfk:name="General Fields" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="WebParameters" ParameterCount="0" />
+        <mfk:section mfk:name="Grid Options" NeverSaved="0" DisplayRecordCount="0" />
+        <mfk:section mfk:name="Metadata" Count="59">
+            <mfk:section mfk:name="_0">//create table "&lt;TABLENAME&gt;"</mfk:section>
+            <mfk:section mfk:name="_1">CREATE TABLE "&lt;TABLENAME&gt;"(</mfk:section>
+            <mfk:section mfk:name="_2">&nbsp;&nbsp;&nbsp;MFK$GUID      CHAR(16) CHARACTER SET OCTETS NOT NULL COLLATE OCTETS, </mfk:section>
+            <mfk:section mfk:name="_3">&nbsp;&nbsp;&nbsp;MFK$CTS       TIMESTAMP, </mfk:section>
+            <mfk:section mfk:name="_4">&nbsp;&nbsp;&nbsp;MFK$LMTS      TIMESTAMP, </mfk:section>
+            <mfk:section mfk:name="_5">&nbsp;&nbsp;&nbsp;OBJECTID      VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_6">&nbsp;&nbsp;&nbsp;"Type_Descr"  VARCHAR(200) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_7">&nbsp;&nbsp;&nbsp;"Park_Name"   VARCHAR(200) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_8">&nbsp;&nbsp;&nbsp;"Rubbish_bi"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_9">&nbsp;&nbsp;&nbsp;"Website"     VARCHAR(200) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_10">&nbsp;&nbsp;&nbsp;ORIG_FID      INTEGER DEFAULT 0, </mfk:section>
+            <mfk:section mfk:name="_11">&nbsp;&nbsp;&nbsp;FACILITYID    INTEGER DEFAULT 0, </mfk:section>
+            <mfk:section mfk:name="_12">&nbsp;&nbsp;&nbsp;"NAMEPark"    VARCHAR(100) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_13">&nbsp;&nbsp;&nbsp;FULLADDR      VARCHAR(200) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_14">&nbsp;&nbsp;&nbsp;OPERHOURS     VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_15">&nbsp;&nbsp;&nbsp;OPERDAYS      VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_16">&nbsp;&nbsp;&nbsp;PARKURL       VARCHAR(150) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_17">&nbsp;&nbsp;&nbsp;"PhotoURL"    VARCHAR(200) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_18">&nbsp;&nbsp;&nbsp;"Toilets"     VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_19">&nbsp;&nbsp;&nbsp;"Universal_"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_20">&nbsp;&nbsp;&nbsp;"Shelter"     VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_21">&nbsp;&nbsp;&nbsp;"Barbecues"   VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_22">&nbsp;&nbsp;&nbsp;"picnic_tab"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_23">&nbsp;&nbsp;&nbsp;"Seating"     VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_24">&nbsp;&nbsp;&nbsp;"Drinking_f"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_25">&nbsp;&nbsp;&nbsp;"Play_equip"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_26">&nbsp;&nbsp;&nbsp;"Recreation"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_27">&nbsp;&nbsp;&nbsp;"Walking_tr"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_28">&nbsp;&nbsp;&nbsp;"Dogs_NOT_p"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_29">&nbsp;&nbsp;&nbsp;"Dogs_on_le"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_30">&nbsp;&nbsp;&nbsp;"Dogs_off_l"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_31">&nbsp;&nbsp;&nbsp;"Shade_tree"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_32">&nbsp;&nbsp;&nbsp;"Historic_S"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_33">&nbsp;&nbsp;&nbsp;"Suitable_f"  VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_34">&nbsp;&nbsp;&nbsp;"Lat"         VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_35">&nbsp;&nbsp;&nbsp;"Long"        VARCHAR(64) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_36">&nbsp;&nbsp;&nbsp;FID           VARCHAR(64) COLLATE UNICODE</mfk:section>
+            <mfk:section mfk:name="_37">);</mfk:section>
+            <mfk:section mfk:name="_38" />
+            <mfk:section mfk:name="_39">//create index "&lt;TABLENAME&gt;_X1"</mfk:section>
+            <mfk:section mfk:name="_40">CREATE UNIQUE  ASC INDEX "&lt;TABLENAME&gt;_X1" ON "&lt;TABLENAME&gt;"(MFK$GUID);</mfk:section>
+            <mfk:section mfk:name="_41" />
+            <mfk:section mfk:name="_42">//create index "&lt;TABLENAME&gt;_X2"</mfk:section>
+            <mfk:section mfk:name="_43">CREATE ASC INDEX "&lt;TABLENAME&gt;_X2" ON "&lt;TABLENAME&gt;"(MFK$CTS);</mfk:section>
+            <mfk:section mfk:name="_44" />
+            <mfk:section mfk:name="_45">SET TERM ## ;</mfk:section>
+            <mfk:section mfk:name="_46">CREATE TRIGGER "&lt;TABLENAME&gt;_TBI" FOR "&lt;TABLENAME&gt;" ACTIVE BEFORE INSERT POSITION 0 AS </mfk:section>
+            <mfk:section mfk:name="_47">BEGIN</mfk:section>
+            <mfk:section mfk:name="_48">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$CTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_49">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$LMTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_50">&nbsp;&nbsp;&nbsp;&nbsp;IF ((NEW.MFK$GUID IS NULL) OR (NEW.MFK$GUID='GenerateGUIDEx()')) THEN</mfk:section>
+            <mfk:section mfk:name="_51">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$GUID = GenerateGUIDEx();</mfk:section>
+            <mfk:section mfk:name="_52">END ## SET TERM ; ##</mfk:section>
+            <mfk:section mfk:name="_53" />
+            <mfk:section mfk:name="_54">SET TERM ## ;</mfk:section>
+            <mfk:section mfk:name="_55">CREATE TRIGGER "&lt;TABLENAME&gt;_TBU" FOR "&lt;TABLENAME&gt;" ACTIVE BEFORE UPDATE POSITION 0 AS </mfk:section>
+            <mfk:section mfk:name="_56">BEGIN</mfk:section>
+            <mfk:section mfk:name="_57">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$LMTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_58">END ## SET TERM ; ##</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridOptions"
+            GridCol0="18"
+            GridCol1="180"
+            GridCol2="100"
+            GridCol3="1000" />
+        <mfk:section mfk:name="GridView: TcxGridDBTableView" GroupFooters="0" Version="1">
+            <mfk:section mfk:name="Footer">"False"</mfk:section>
+            <mfk:section mfk:name="GroupByBox">"True"</mfk:section>
+            <mfk:section mfk:name="NewItemRow">"False"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/0: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="0"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"False"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"MFK$LMTS"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/1: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="1"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"False"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"MFK$CTS"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/2: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="2"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"False"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"MFK$GUID"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/3: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="3"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Lat"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/4: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="246"
+            AlignmentHorz="0"
+            Index="4"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Long"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/5: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="5"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"FID"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/6: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="6"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"OBJECTID"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/7: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="209"
+            AlignmentHorz="0"
+            Index="7"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Type_Descr"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/8: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="189"
+            AlignmentHorz="0"
+            Index="8"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Park_Name"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/9: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="9"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Rubbish_bi"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/10: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="10"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Toilets"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/11: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="11"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Universal_"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/12: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="12"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Shelter"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/13: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="13"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Barbecues"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/14: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="14"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"picnic_tab"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/15: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="15"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Seating"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/16: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="16"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Drinking_f"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/17: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="17"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Play_equip"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/18: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="18"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Recreation"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/19: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="19"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Walking_tr"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/20: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="20"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Dogs_NOT_p"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/21: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="21"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Dogs_on_le"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/22: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="22"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Dogs_off_l"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/23: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="23"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Shade_tree"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/24: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="24"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Historic_S"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/25: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="25"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Suitable_f"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/26: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="26"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"Website"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/27: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="1"
+            Index="27"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"ORIG_FID"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/28: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="1"
+            Index="28"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"FACILITYID"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/29: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="146"
+            AlignmentHorz="0"
+            Index="29"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"NAMEPark"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/30: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="256"
+            AlignmentHorz="0"
+            Index="30"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"FULLADDR"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/31: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="31"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"OPERHOURS"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/32: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="32"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"OPERDAYS"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/33: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="33"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"PARKURL"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/34: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="34"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"PhotoURL"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="Grid Available Columns"
+            Count="35"
+            Line0="MFK$GUID"
+            Line1="MFK$CTS"
+            Line2="MFK$LMTS"
+            Line3="OBJECTID"
+            Line4="Type_Descr"
+            Line5="Park_Name"
+            Line6="Rubbish_bi"
+            Line7="Website"
+            Line8="ORIG_FID"
+            Line9="FACILITYID"
+            Line10="NAMEPark"
+            Line11="FULLADDR"
+            Line12="OPERHOURS"
+            Line13="OPERDAYS"
+            Line14="PARKURL"
+            Line15="PhotoURL"
+            Line16="Toilets"
+            Line17="Universal_"
+            Line18="Shelter"
+            Line19="Barbecues"
+            Line20="picnic_tab"
+            Line21="Seating"
+            Line22="Drinking_f"
+            Line23="Play_equip"
+            Line24="Recreation"
+            Line25="Walking_tr"
+            Line26="Dogs_NOT_p"
+            Line27="Dogs_on_le"
+            Line28="Dogs_off_l"
+            Line29="Shade_tree"
+            Line30="Historic_S"
+            Line31="Suitable_f"
+            Line32="Lat"
+            Line33="Long"
+            Line34="FID" />
+    </mfk:config>
+    <mfk:properties>
+        <mfk:object mfk:name="tblPlayGroundProvider" mfk:class="TtblPlayGroundProvider" />
+    </mfk:properties>
+    <mfk:server>
+        <![CDATA[
+        Unit tblPlayGround;
+
+        Interface
+
+        Type
+        tblPlayGroundProvider = Class(TableProvider)
+          private
+            { Private declarations }
+          public
+            { Public declarations }
+        End; ['WSRead=true','WSWrite=true'];
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:server>
+    <mfk:browser>
+        <![CDATA[
+        Unit tblPlayGround;
+
+        Interface
+
+        Type
+        tblPlayGroundProvider = Class(TableProvider)
+          private
+            { Private declarations }
+          public
+            { Public declarations }
+        End; ['WSRead=true','WSWrite=true'];
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:browser>
+</mfk:MorfikFile>

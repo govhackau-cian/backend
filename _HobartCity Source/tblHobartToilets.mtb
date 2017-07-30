@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="WebParameters" ParameterCount="0" />
+        <mfk:section mfk:name="SQL Port And Field Names"
+            Count="19"
+            Line0="MFK$GUID=MFK$GUID"
+            Line1="_MorfikType_MFK$GUID=String"
+            Line2="_UIDFieldName_=MFK$GUID"
+            Line3="MFK$CTS=MFK$CTS"
+            Line4="_MorfikType_MFK$CTS=TDateTime"
+            Line5="MFK$LMTS=MFK$LMTS"
+            Line6="_MorfikType_MFK$LMTS=TDateTime"
+            Line7="OBEJECTID=OBEJECTID"
+            Line8="_MorfikType_OBEJECTID=String"
+            Line9="DESCRPT=DESCRPT"
+            Line10="_MorfikType_DESCRPT=String"
+            Line11="AREALOC=AREALOC"
+            Line12="_MorfikType_AREALOC=String"
+            Line13="LAT=LAT"
+            Line14="_MorfikType_LAT=String"
+            Line15="LONG=LONG"
+            Line16="_MorfikType_LONG=String"
+            Line17="TYPEOF=TYPEOF"
+            Line18="_MorfikType_TYPEOF=String" />
+        <mfk:section mfk:name="General Fields" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config>
+        <mfk:section mfk:name="WebParameters" ParameterCount="0" />
+        <mfk:section mfk:name="Metadata" Count="33">
+            <mfk:section mfk:name="_0">//create table "&lt;TABLENAME&gt;"</mfk:section>
+            <mfk:section mfk:name="_1">CREATE TABLE "&lt;TABLENAME&gt;"(</mfk:section>
+            <mfk:section mfk:name="_2">&nbsp;&nbsp;&nbsp;MFK$GUID   CHAR(16) CHARACTER SET OCTETS NOT NULL COLLATE OCTETS, </mfk:section>
+            <mfk:section mfk:name="_3">&nbsp;&nbsp;&nbsp;MFK$CTS    TIMESTAMP, </mfk:section>
+            <mfk:section mfk:name="_4">&nbsp;&nbsp;&nbsp;MFK$LMTS   TIMESTAMP, </mfk:section>
+            <mfk:section mfk:name="_5">&nbsp;&nbsp;&nbsp;OBEJECTID  VARCHAR(100) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_6">&nbsp;&nbsp;&nbsp;DESCRPT    VARCHAR(100) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_7">&nbsp;&nbsp;&nbsp;AREALOC    VARCHAR(100) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_8">&nbsp;&nbsp;&nbsp;LAT        VARCHAR(100) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_9">&nbsp;&nbsp;&nbsp;"LONG"     VARCHAR(100) COLLATE UNICODE, </mfk:section>
+            <mfk:section mfk:name="_10">&nbsp;&nbsp;&nbsp;TYPEOF     VARCHAR(64) COLLATE UNICODE</mfk:section>
+            <mfk:section mfk:name="_11">);</mfk:section>
+            <mfk:section mfk:name="_12" />
+            <mfk:section mfk:name="_13">//create index "&lt;TABLENAME&gt;_X1"</mfk:section>
+            <mfk:section mfk:name="_14">CREATE UNIQUE  ASC INDEX "&lt;TABLENAME&gt;_X1" ON "&lt;TABLENAME&gt;"(MFK$GUID);</mfk:section>
+            <mfk:section mfk:name="_15" />
+            <mfk:section mfk:name="_16">//create index "&lt;TABLENAME&gt;_X2"</mfk:section>
+            <mfk:section mfk:name="_17">CREATE ASC INDEX "&lt;TABLENAME&gt;_X2" ON "&lt;TABLENAME&gt;"(MFK$CTS);</mfk:section>
+            <mfk:section mfk:name="_18" />
+            <mfk:section mfk:name="_19">SET TERM ## ;</mfk:section>
+            <mfk:section mfk:name="_20">CREATE TRIGGER "&lt;TABLENAME&gt;_TBI" FOR "&lt;TABLENAME&gt;" ACTIVE BEFORE INSERT POSITION 0 AS </mfk:section>
+            <mfk:section mfk:name="_21">BEGIN</mfk:section>
+            <mfk:section mfk:name="_22">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$CTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_23">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$LMTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_24">&nbsp;&nbsp;&nbsp;&nbsp;IF ((NEW.MFK$GUID IS NULL) OR (NEW.MFK$GUID='GenerateGUIDEx()')) THEN</mfk:section>
+            <mfk:section mfk:name="_25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$GUID = GenerateGUIDEx();</mfk:section>
+            <mfk:section mfk:name="_26">END ## SET TERM ; ##</mfk:section>
+            <mfk:section mfk:name="_27" />
+            <mfk:section mfk:name="_28">SET TERM ## ;</mfk:section>
+            <mfk:section mfk:name="_29">CREATE TRIGGER "&lt;TABLENAME&gt;_TBU" FOR "&lt;TABLENAME&gt;" ACTIVE BEFORE UPDATE POSITION 0 AS </mfk:section>
+            <mfk:section mfk:name="_30">BEGIN</mfk:section>
+            <mfk:section mfk:name="_31">&nbsp;&nbsp;&nbsp;&nbsp;NEW.MFK$LMTS = GetTime();</mfk:section>
+            <mfk:section mfk:name="_32">END ## SET TERM ; ##</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridOptions"
+            GridCol0="18"
+            GridCol1="180"
+            GridCol2="100"
+            GridCol3="1000" />
+        <mfk:section mfk:name="Grid Options" NeverSaved="0" DisplayRecordCount="0" />
+        <mfk:section mfk:name="GridView: TcxGridDBTableView" GroupFooters="0" Version="1">
+            <mfk:section mfk:name="Footer">"False"</mfk:section>
+            <mfk:section mfk:name="GroupByBox">"True"</mfk:section>
+            <mfk:section mfk:name="NewItemRow">"False"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/0: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="0"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"False"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"MFK$LMTS"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/1: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="1"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"False"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"MFK$CTS"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/2: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="2"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"False"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"MFK$GUID"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/3: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="3"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"OBEJECTID"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/4: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="243"
+            AlignmentHorz="0"
+            Index="4"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"DESCRPT"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/5: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="192"
+            AlignmentHorz="0"
+            Index="5"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"AREALOC"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/6: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="6"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"LAT"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/7: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="94"
+            AlignmentHorz="0"
+            Index="7"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"LONG"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="GridView/8: TcxGridDBColumn"
+            GroupIndex="-1"
+            Width="264"
+            AlignmentHorz="0"
+            Index="8"
+            SortIndex="-1">
+            <mfk:section mfk:name="Visible">"True"</mfk:section>
+            <mfk:section mfk:name="SortOrder">"soNone"</mfk:section>
+            <mfk:section mfk:name="WasVisibleBeforeGrouping">"False"</mfk:section>
+            <mfk:section mfk:name="FieldName">"TYPEOF"</mfk:section>
+        </mfk:section>
+        <mfk:section mfk:name="Grid Available Columns"
+            Count="9"
+            Line0="MFK$GUID"
+            Line1="MFK$CTS"
+            Line2="MFK$LMTS"
+            Line3="OBEJECTID"
+            Line4="DESCRPT"
+            Line5="AREALOC"
+            Line6="LAT"
+            Line7="LONG"
+            Line8="TYPEOF" />
+    </mfk:config>
+    <mfk:properties>
+        <mfk:object mfk:name="tblHobartToiletsProvider" mfk:class="TtblHobartToiletsProvider" />
+    </mfk:properties>
+    <mfk:server>
+        <![CDATA[
+        Unit tblHobartToilets;
+
+        Interface
+
+        Type
+        tblHobartToiletsProvider = Class(TableProvider)
+          private
+            { Private declarations }
+          public
+            { Public declarations }
+        End; ['WSRead=true','WSWrite=true'];
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:server>
+    <mfk:browser>
+        <![CDATA[
+        Unit tblHobartToilets;
+
+        Interface
+
+        Type
+        tblHobartToiletsProvider = Class(TableProvider)
+          private
+            { Private declarations }
+          public
+            { Public declarations }
+        End; ['WSRead=true','WSWrite=true'];
+
+        Implementation
+
+        End.
+        ]]>
+    </mfk:browser>
+</mfk:MorfikFile>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mfk:MorfikFile xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mfk="http://www.morfik.com/webos">
+    <mfk:header>
+        <mfk:section mfk:name="FastLookup"
+            State="I(frmRoot!!)I(Form1!frmRoot%3ASubform1!)"
+            Params=""
+            WebDocName="frmRoot"
+            Title=""
+            Description=""
+            ParentPage="_Blank_"
+            URL=""
+            SEOOptions="IndexURL,IndexLinks,AllowArchive,AllowODP"
+            StylesUsed=""
+            WidgetsUsed=""
+            CustomControlsUsed=""
+            LanguageData=""
+            ContentWidth="211667"
+            ContentHeight="280459"
+            URLCount="0" />
+        <mfk:section mfk:name="General Fields" Language="0" QueryKind="0" />
+    </mfk:header>
+    <mfk:config />
+</mfk:MorfikFile>
